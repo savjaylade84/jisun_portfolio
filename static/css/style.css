@@ -1,0 +1,60 @@
+.card-deck {
+  display: flex;
+}
+.card-deck .card {
+  margin: 0.5em;
+}
+.card-deck .card-body {
+  background-color: #4E2362;
+  color: #F5F5F5;
+}
+.card-deck .card-footer {
+  background-color: #4E2362;
+  border: 0px solid transparent;
+}
+
+.button {
+  cursor: pointer;
+  display: inline-flex;
+  isolation: isolate;
+  position: relative;
+  background: 0;
+  position: relative;
+  transition: color 400ms linear;
+  padding: 0.7rem 0.7rem;
+}
+
+.button::after {
+  content: "";
+  background-color: rgba(202, 158, 12, 0.9);
+  height: auto;
+  inset: 0;
+  z-index: -1;
+  position: absolute;
+  transform: scale(0, 1);
+  transition: transform 800ms ease;
+  transform-origin: left;
+}
+
+.button:hover::after, .button:focus::after, .button:active::after {
+  transform: scale(1, 1);
+}
+
+.button-gold {
+  border: 0.242em solid rgba(202, 158, 12, 0.9);
+  color: rgba(202, 158, 12, 0.9);
+}
+
+.button:hover, .button:focus::after {
+  color: whitesmoke;
+}
+
+.button-purple {
+  border: 0.242rem solid rgba(60, 12, 82, 0.9);
+  color: rgba(60, 12, 82, 0.9);
+}
+
+.button:active, .button:focus {
+  -webkit-text-decoration: underline 5px solid;
+          text-decoration: underline 5px solid;
+}/*# sourceMappingURL=style.css.map */
