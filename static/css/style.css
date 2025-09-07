@@ -16,6 +16,7 @@
 .button {
   cursor: pointer;
   display: inline-flex;
+  align-items: center;
   isolation: isolate;
   position: relative;
   background: 0;
@@ -24,10 +25,12 @@
   padding: 0.7rem 0.7rem;
 }
 
+.button-gold::after, .button-black::after {
+  background-color: rgba(202, 158, 12, 0.9);
+}
+
 .button::after {
   content: "";
-  background-color: rgba(202, 158, 12, 0.9);
-  height: auto;
   inset: 0;
   z-index: -1;
   position: absolute;
@@ -41,8 +44,14 @@
 }
 
 .button-gold {
-  border: 0.242em solid rgba(202, 158, 12, 0.9);
+  border: 0.1em solid rgba(202, 158, 12, 0.9);
   color: rgba(202, 158, 12, 0.9);
+}
+
+.button-black {
+  border: 0px solid transparent;
+  background-color: #1F1D24;
+  color: whitesmoke;
 }
 
 .button:hover, .button:focus::after {
@@ -57,4 +66,15 @@
 .button:active, .button:focus {
   -webkit-text-decoration: underline 5px solid;
           text-decoration: underline 5px solid;
+}
+
+.me {
+  border-radius: 100%;
+  margin: 10px 50px 10px 10px;
+}
+
+.icon {
+  width: calc((0.7vh + 1rem + 0.7vw + 1rem) / 2);
+  height: calc((0.7vh + 1rem + 0.7vw + 1rem) / 2);
+  margin: auto 0;
 }/*# sourceMappingURL=style.css.map */
