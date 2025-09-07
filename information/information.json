@@ -1,0 +1,29 @@
+{
+
+    "Author": "John Jayson B. De Leon",
+    "Github": "https://github.com/savjaylade84",
+    "Facebook_Page": "https://www.facebook.com/profile.php?id=100067187880921",
+    "Instagram": "https://www.instagram.com/savjaylade84/",
+    "Linkedin": "https://www.linkedin.com/in/john-jayson-de-leon-73532818b/",
+    "Project_List": [
+        {
+            "Name": "Flask Weather App",
+            "Link": "https://github.com/savjaylade84/flask_weather_app"
+        },{
+            "Name": "Terminal Bank System",
+            "Link": "https://github.com/savjaylade84/python-bank-system"
+        },{
+            "Name": "Pokemon Information Terminal",
+            "Link": "https://github.com/savjaylade84/python_pokedex_terminal"
+        },{
+            "Name": "Calorie Tracker",
+            "Link": "https://github.com/savjaylade84/calorie_tracker"
+        },{
+            "Name": "Simple My Twitter Post",
+            "Link": "https://github.com/savjaylade84/MyTweeterFeed"
+        },{
+            "Name": "My Facebook Page Post",
+            "Link": "https://github.com/savjaylade84/My_Facebook_Page_Post"
+        }
+    ]
+}

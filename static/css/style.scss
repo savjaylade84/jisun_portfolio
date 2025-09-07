@@ -1,0 +1,66 @@
+    $accent-color-gold:rgba(202, 158, 12, 0.9);
+    $accent-color-purple: rgba(60, 12, 82, 0.9);
+    $primary-color-white:whitesmoke;
+    $primary-color-black: rgba(20, 20, 22,0.8);
+    $primary-color-blackish:#1F1D24;
+
+.card-deck{
+    display: flex;
+    
+    .card{
+        margin: 0.5em;
+    }
+    .card-body{
+        background-color: #4E2362;
+        color: #F5F5F5;
+    }
+    .card-footer{
+        background-color: #4E2362;
+        border: 0px solid transparent;
+    }
+}
+
+.button{
+    cursor: pointer;
+    display: inline-flex;
+    isolation: isolate;
+    position: relative;
+    background: 0;
+    position: relative;
+    transition: color 400ms linear;
+    padding: 0.7rem 0.7rem;
+}
+
+.button::after{
+    content:'';
+    background-color:$accent-color-gold;
+    height:auto;
+    inset:0;
+    z-index:-1;
+    position: absolute;
+    transform: scale(0,1);
+    transition: transform 800ms ease;
+    transform-origin: left;
+}
+
+.button:hover::after,.button:focus::after,.button:active::after{
+    transform: scale(1,1);
+}
+
+.button-gold{
+    border:0.242em solid $accent-color-gold;
+    color:$accent-color-gold;
+}
+
+.button:hover,.button:focus::after{
+    color: $primary-color-white;
+}
+
+.button-purple{
+    border:0.242rem solid $accent-color-purple;
+    color:  $accent-color-purple;
+}
+
+.button:active,.button:focus{
+    text-decoration:underline 5px solid;
+}
