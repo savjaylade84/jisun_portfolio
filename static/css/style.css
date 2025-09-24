@@ -95,8 +95,9 @@
 
 /* image */
 .me {
-  border-radius: 100%;
-  margin: 10px 50px 10px 10px;
+  margin-right: 3em;
+  height: 40em;
+  width: 28em;
 }
 
 .icon {
@@ -136,4 +137,13 @@
 
 .bottom-margin-large {
   margin-bottom: 15em;
+}
+
+/* carousel */
+.main-carousel {
+  background-color: #1F1D24;
+  height: 50%;
+}
+.main-carousel .mx-auto {
+  width: 60%;
 }/*# sourceMappingURL=style.css.map */
