@@ -1,8 +1,15 @@
-    $accent-color-gold:rgba(202, 158, 12, 0.9);
+/* color scheme of portfolio website */
+$accent-color-gold:rgba(202, 158, 12, 0.9);
     $accent-color-purple: rgba(60, 12, 82, 0.9);
     $primary-color-white:whitesmoke;
     $primary-color-black: rgba(20, 20, 22,0.8);
     $primary-color-blackish:#1F1D24;
+
+*{
+    font-family: 'Lato', sans-serif;
+    margin:0;
+    padding:0;
+}
 
 .card-deck{
     display: flex;
@@ -20,6 +27,20 @@
     }
 }
 
+.desc-title{
+    width:50em;
+}
+
+/*quotes*/
+.quotes:before{
+    content:'\201C';
+}
+
+.quotes:after{
+    content:'\201D';
+}
+
+/* button style */
 .button{
     cursor: pointer;
     display: inline-flex;
@@ -30,6 +51,10 @@
     position: relative;
     transition: color 400ms linear;
     padding: 0.7rem 0.7rem;
+
+    span{
+        margin-right:0.4em;
+    }
 }
 
 .button-gold::after,.button-black::after{
@@ -52,7 +77,7 @@
 }
 
 .button-gold{
-    border:0.1em solid $accent-color-gold;
+    border:0.15em solid $accent-color-gold;
     color:$accent-color-gold;
 }
 
@@ -75,6 +100,7 @@
     text-decoration:underline 5px solid;
 }
 
+/* image */
 .me{
     border-radius: 100%;
     margin: 10px 50px 10px 10px;
@@ -84,4 +110,36 @@
     width:  calc(((0.7vh + 1rem) + (0.7vw + 1rem))/2);
     height: calc(((0.7vh + 1rem) + (0.7vw + 1rem))/2);
     margin:auto 0;
+}
+
+/*margin in division*/
+.top-margin-xsmall{
+    margin-top:1.5em;
+}
+.top-margin-small{
+    margin-top: 5em;
+}
+
+.top-margin-medium{
+    margin-top: 10em;
+}
+
+.top-margin-large{
+    margin-top: 15em;
+}
+
+.top-margin-xsmall{
+    margin-bottom:1.5em;
+}
+
+.bottom-margin-small{
+    margin-bottom: 5em;
+}
+
+.bottom-margin-medium{
+    margin-bottom: 10em;
+}
+
+.bottom-margin-large{
+    margin-bottom: 15em;
 }
