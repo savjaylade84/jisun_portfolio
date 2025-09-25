@@ -33,94 +33,64 @@
 
     <body>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#"> &nbsp;
                 <img src="{{ url_for('static',filename='/img/jisun.svg') }}" width="30" height="30" class="d-inline-block align-top" alt="">
                 &nbsp;Jisun
             </a>
         </nav>
 
-        <div class="introduction top-margin-small d-flex justify-content-center align-items-center" id="introduction">
-            <picture>
-                <source srcset=" {{ url_for('static',filename='/img/Jayson.png') }} " type="image/svg+xml">
-                <img src=" {{ url_for('static',filename='/img/Jayson.png') }} " class="img-fluid me" alt="...">
-            </picture>
-            <div>
-                <p class="h3 text-capitalize font-weight-bold">{{ information['Title'] }}</p>
-                <p class="h4 text-capitalize">{{ information['Sub-title'] }}</p>
-                <p class="h5 text-truncate text-wrap quotes text-break text-justify  desc-title top-margin-xsmall">{{ information['desc-title'] }}</p>
-                <a href="{{ information['Github'] }}" class="btn button button-black align-items-center">
-                    <span>
-                        <img src="{{ url_for('static',filename='/img/github.png') }}" class = "icon" width="16" height="16"/>
-                    </span>
-                    &nbsp;Github
-                </a>
-                <a href="{{ information['Linkedin'] }}" class="btn button button-black align-items-center">
-                    <span>
-                        <img src="{{ url_for('static',filename='/img/linkedin.png') }}" class = "icon" width="16" height="16"/>
-                    </span>
-                    &nbsp;Linkedin
-                </a>
-                <a href="{{ information['Facebook_Page'] }}" class="btn button button-black align-items-center">
-                    <span>
-                        <img src="{{ url_for('static',filename='/img/facebook.png') }}" class = "icon" width="16" height="16"/>
-                    </span>
-                    &nbsp;Facebook
-                </a>
-                <a href="{{ information['Instagram'] }}" class="btn button button-black align-items-center">
-                    <span>
-                        <img src="{{ url_for('static',filename='/img/instagram.png') }}" class = "icon" width="16" height="16"/>
-                    </span>
-                    &nbsp;Instagram
-                </a>
-                <a href="{{ information['Twitter'] }}" class="btn button button-black align-items-center">
-                    <span>
-                        <img src="{{ url_for('static',filename='/img/twitter.png') }}" class = "icon" width="16" height="16"/>
-                    </span>
-                    &nbsp;Twitter
-                </a>
+        <div class="introduction  container-sm top-margin-large d-flex d-md-flex flex-md-row flex-column justify-content-center align-items-center" id="introduction">
+            <div class="profile-container">
+                <picture>
+                    <source srcset=" {{ url_for('static',filename='/img/Jayson.png') }} " type="image/svg+xml">
+                    <img src=" {{ url_for('static',filename='/img/Jayson.png') }} " class="img-fluid me" alt="...">
+                </picture>
+            </div>
+            <div class="profile-intro-container">
+                <div>
+                    <p class="display-6 lead text-capitalize font-weight-bold">{{ information['Title'] }}</p>
+                    <p class="h3 text-muted bottom-margin-xsmall">{{ information['Sub-title'] }}</p>
+                </div>
+                <div class="social-media-buttons">
+                    {% for icon in information['social_media_icon'] %}
+                        <a href="{{ icon['Link'] }}" class=" btn btn-md btn-dark align-items-center">
+                            <span>
+                                <img src="{{ url_for('static',filename=icon['Icon']) }}" class = "icon" width="16" height="16"/>
+                            </span>
+                                &nbsp;{{ icon['Name'] }}
+                        </a>
+                    {% endfor %}
+                </div>
             </div>
         </div>
 
-        <div class="main-carousel">
-        <div class="mx-auto ">
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-
-                {% for num in range(0,information['Project_List']|length) %}
-                    {% if num == 0 %}
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{num}}" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    {% endif %}
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ num }}" aria-label="Slide {{ num+1 }}"></button>
-                {% endfor %}
+        <div class="about-me top-padding-medium bottom-padding-small">
+            <div class="container col-xl-10 col-xxl-8 px-4">
+                <div class="row align-items-center top-margin-none top-padding-none g-lg-5 ">
+                    <div class="col-lg-7 text-light top-margin-none bottom-margin-xsmall top-padding-none bottom-padding-none text-center text-lg-start">
+                        <picture>
+                            <source srcset=" {{ url_for('static',filename='/img/cosmoboy_dark.png') }} " type="image/svg+xml">
+                            <img src=" {{ url_for('static',filename='/img/cosmoboy_dark.png') }} " class="img-fluid me-round" alt="...">
+                        </picture>
+                        <h1 class="display-5 top-margin-xsmall fw-bold lh-1 mb-3">{{ information['About']['Title'] }}</h1>
+                        <p class="col-lg-10 fs-4">{{ information['About']['Description'] }}</p>
+                    </div>
+                    <div class="col-md-10 mx-auto col-lg-5 bottom-padding-xsmall top-padding-xsmall ">
+                            <form class="p-4 p-md-5 border rounded-3 bg-light">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                    <label for="floatingInput">Email address</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="input" class="form-control" id="floatingInput" placeholder="Message">
+                                    <label for="floatingPassword">Message</label>
+                                </div>
+                                <button class="w-100 btn btn-lg btn-dark" type="submit"> Let's Connect </button>
+                            </form>
+                    </div>
+                </div>
             </div>
-            <div class="carousel-inner">
-                {% for project in information['Project_List'] %}
-                
-                    {% if project['Name'] == 'Flask Weather App' %}
-                        <div class="carousel-item active">
-                    {% else %}
-                        <div class="carousel-item">
-                    {% endif %}
-                        <img src="{{ url_for('static',filename='/img/default.jpg') }}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block" style="background-color: #0000004D;">
-                                <h5>{{ project['Name'] }}</h5>
-                                <p>Some representative placeholder content for the third slide.</p>
-                                <a href=" {{ project['Link'] }} " class="btn button button-gold">Visit Repository</a>
-                            </div>
-                        </div>
-                {% endfor %}
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        </div>
         </div>
 
         <div class="card-deck top-margin-small d-flex justify-content-center flex-wrap" id="projects">

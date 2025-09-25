@@ -2,10 +2,11 @@
 /* color scheme of portfolio website */
 * {
   font-family: "Lato", sans-serif;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
+/*projects*/
 .card-deck {
   display: flex;
 }
@@ -95,9 +96,16 @@
 
 /* image */
 .me {
-  margin-right: 3em;
-  height: 40em;
+  background-color: transparent;
+  margin-right: 4em;
   width: 28em;
+}
+
+.me-round {
+  border-radius: 100%;
+  min-width: 15em;
+  max-width: 20em;
+  image-rendering: optimizeQuality;
 }
 
 .icon {
@@ -107,6 +115,50 @@
 }
 
 /*margin in division*/
+.top-padding-none {
+  padding-top: 0px;
+}
+
+.top-padding-xsmall {
+  padding-top: 1.5em;
+}
+
+.top-padding-small {
+  padding-top: 5em;
+}
+
+.top-padding-medium {
+  padding-top: 10em;
+}
+
+.top-padding-large {
+  padding-top: 15em;
+}
+
+.bottom-padding-none {
+  padding-bottom: 0px;
+}
+
+.bottom-padding-xsmall {
+  padding-bottom: 1.5em;
+}
+
+.bottom-padding-small {
+  padding-bottom: 5em;
+}
+
+.bottom-padding-medium {
+  padding-bottom: 10em;
+}
+
+.bottom-padding-large {
+  padding-bottom: 15em;
+}
+
+.top-margin-none {
+  margin-top: 0px;
+}
+
 .top-margin-xsmall {
   margin-top: 1.5em;
 }
@@ -123,7 +175,11 @@
   margin-top: 15em;
 }
 
-.top-margin-xsmall {
+.bottom-margin-none {
+  margin-bottom: 0px;
+}
+
+.bottom-margin-xsmall {
   margin-bottom: 1.5em;
 }
 
@@ -142,8 +198,38 @@
 /* carousel */
 .main-carousel {
   background-color: #1F1D24;
-  height: 50%;
+  height: 80%;
 }
 .main-carousel .mx-auto {
-  width: 60%;
+  width: 70%;
+}
+.main-carousel button:hover {
+  background-color: #1F1D24;
+}
+
+/* buttons of social media */
+.social-media-buttons a {
+  margin-bottom: 0.5em;
+}
+.social-media-buttons .btn-dark, .social-media-buttons .btn:hover {
+  background-color: #1F1D24;
+  border: solid #1F1D24;
+}
+
+/* intro */
+.container-sm {
+  padding: 0;
+}
+
+/*intro title*/
+.profile-intro-container {
+  padding: 4em 2em 3em 2em;
+  background-color: #1F1D24;
+  color: whitesmoke;
+}
+
+/* about me*/
+.about-me {
+  background: #ae22c3;
+  background: linear-gradient(0deg, rgb(174, 34, 195) 0%, rgb(237, 57, 138) 100%);
 }/*# sourceMappingURL=style.css.map */
