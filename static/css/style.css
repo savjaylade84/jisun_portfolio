@@ -97,7 +97,6 @@
 /* image */
 .me {
   background-color: transparent;
-  margin-right: 4em;
   width: 28em;
 }
 
@@ -208,6 +207,9 @@
 }
 
 /* buttons of social media */
+.social-media-buttons {
+  text-align: center;
+}
 .social-media-buttons a {
   margin-bottom: 0.5em;
 }
@@ -223,9 +225,13 @@
 
 /*intro title*/
 .profile-intro-container {
-  padding: 4em 2em 3em 2em;
+  padding: 3em 0.8em 2em 0.8em;
   background-color: #1F1D24;
   color: whitesmoke;
+  text-align: center;
+}
+.profile-intro-container .intro-title {
+  margin-bottom: 0em;
 }
 
 /* about me*/
