@@ -48,9 +48,9 @@
                 </picture>
             </div>
             <div class="profile-intro-container">
-                <div>
-                    <p class="display-6 lead text-capitalize font-weight-bold">{{ information['Title'] }}</p>
-                    <p class="h3 text-muted bottom-margin-xsmall">{{ information['Sub-title'] }}</p>
+                <div class="bottom-padding-xsmall">
+                    <p class="display-6 intro-title lead text-bold text-capitalize font-weight-bold">{{ information['Title'] }}</p>
+                    <p class="h4 bottom-margin-none">{{ information['Sub-title'] }}</p>
                 </div>
                 <div class="social-media-buttons">
                     {% for icon in information['social_media_icon'] %}
@@ -73,20 +73,25 @@
                             <source srcset=" {{ url_for('static',filename='/img/cosmoboy_dark.png') }} " type="image/svg+xml">
                             <img src=" {{ url_for('static',filename='/img/cosmoboy_dark.png') }} " class="img-fluid me-round" alt="...">
                         </picture>
-                        <h1 class="display-5 top-margin-xsmall fw-bold lh-1 mb-3">{{ information['About']['Title'] }}</h1>
-                        <p class="col-lg-10 fs-4">{{ information['About']['Description'] }}</p>
+                        <h1 class="display-6 top-margin-xsmall fw-bold lh-1 mb-3">{{ information['About']['Title'] }}</h1>
+                        <p class="col-lg-10 fs-5">{{ information['About']['Description'] }}</p>
                     </div>
                     <div class="col-md-10 mx-auto col-lg-5 bottom-padding-xsmall top-padding-xsmall ">
                             <form class="p-4 p-md-5 border rounded-3 bg-light">
+                                <legend>Get in Touch</legend>   
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Full Name">
+                                    <label for="floatingInput">Name</label>
+                                </div>
                                 <div class="form-floating mb-3">
                                     <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                                     <label for="floatingInput">Email address</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="input" class="form-control" id="floatingInput" placeholder="Message">
-                                    <label for="floatingPassword">Message</label>
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Message">
+                                    <label for="floatingInput">Message</label>
                                 </div>
-                                <button class="w-100 btn btn-lg btn-dark" type="submit"> Let's Connect </button>
+                                <button class="w-100 btn btn-lg btn-dark" type="submit"> Let Connect </button>
                             </form>
                     </div>
                 </div>

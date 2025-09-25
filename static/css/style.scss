@@ -106,7 +106,6 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
 /* image */
 .me{
     background-color: transparent;
-    margin-right: 4em;
     width: 28em;
 }
 .me-round{
@@ -212,6 +211,7 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
 
 /* buttons of social media */
 .social-media-buttons{
+    text-align: center;
     a{
         margin-bottom:0.5em;
     }
@@ -229,9 +229,13 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
 
 /*intro title*/
 .profile-intro-container{
-    padding: 4em 2em 3em 2em;
+    padding: 3em 0.8em 2em 0.8em;
     background-color: $primary-color-blackish;
     color: $primary-color-white;
+    text-align: center;
+    .intro-title{
+        margin-bottom: 0em;
+    }
 }
 
 /* about me*/
