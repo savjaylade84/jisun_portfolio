@@ -219,6 +219,7 @@
 }
 .social-media-buttons a {
   margin-bottom: 0.5em;
+  margin-left: 0.6em;
 }
 .social-media-buttons .btn-dark, .social-media-buttons .btn:hover {
   background-color: #1F1D24;
@@ -231,16 +232,16 @@
 }
 
 /*background text logo*/
-#introduction:after {
+#introduction:before {
   display: flex;
   align-items: flex-start;
   justify-items: center;
   font-weight: bolder;
   content: "JAYSON";
-  position: fixed;
+  position: absolute;
   color: rgba(43, 41, 48, 0.34);
   top: 0;
-  z-index: -1;
+  z-index: -100;
   width: 100%;
   height: 100%;
   font-size: 25em;
@@ -252,13 +253,11 @@
 
 /*intro title*/
 .profile-intro-container {
-  padding: 3em 0.8em 2em 0.8em;
-  background-color: #1F1D24;
-  color: whitesmoke;
+  padding: 3em 1.5em 2em 1.5em;
+  color: #1F1D24;
+  font-weight: bolder;
+  text-transform: uppercase;
   text-align: center;
-}
-.profile-intro-container .intro-title {
-  margin-bottom: 0em;
 }
 
 /* about me*/
