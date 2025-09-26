@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" >
 	<head>
-			<link rel="icon" href="./images/jisun.svg" type="image/icon type">
+			<link rel="icon" href="{{ url_for('static',filename='/img/jisun.svg') }}" type="image/icon type">
 			<!-- Primary Meta Tags -->
 			<title>{{information['Author']}} - Software Developer</title>
 			<meta name="title" content="{{information['Author']}} - Software Developer">
@@ -37,22 +37,42 @@
     <body>
 
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#"> &nbsp;
-                <img src="{{ url_for('static',filename='/img/jisun.svg') }}" width="30" height="30" class="d-inline-block align-top" alt="">
-            </a>
+            <div class=" container =-fluid mx-auto">
+                <a class="navbar-brand" href="#"> &nbsp;
+                    <img src="{{ url_for('static',filename='/img/jisun.svg') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#introduction">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
         </nav>
 
-        <div class="introduction  container-sm top-margin-large d-flex d-md-flex flex-md-row flex-column justify-content-center align-items-center" id="introduction">
+        <div class="introduction  container-sm top-margin-large d-flex d-lg-flex flex-lg-row flex-column-reverse justify-content-center align-items-center" id="introduction">
             <div class="profile-container">
                 <picture>
-                    <source srcset=" {{ url_for('static',filename='/img/Jayson.png') }} " type="image/svg+xml">
+                    <source srcset=" {{ url_for('static',filename='/img/Jayson.png') }} " fetchpriority="high" type="image/svg+xml">
                     <img src=" {{ url_for('static',filename='/img/Jayson.png') }} " class="img-fluid me" alt="...">
                 </picture>
             </div>
             <div class="profile-intro-container">
                 <div class="bottom-padding-xsmall">
-                    <!-- <p class="display-6 intro-title bgtext lead text-bold text-capitalize font-weight-bold">{{ information['Title'] }}</p> -->
-                    <p class="h4 bottom-margin-none">{{ information['Sub-title'] }}</p>
+                    <p class="h2 bottom-margin-none">{{ information['Sub-title'] }}</p>
                 </div>
                 <div class="social-media-buttons">
                     {% for icon in information['social_media_icon'] %}
@@ -60,19 +80,20 @@
                             <span>
                                 <img src="{{ url_for('static',filename=icon['Icon']) }}" class = "icon" width="16" height="16"/>
                             </span>
-                                &nbsp;{{ icon['Name'] }}
+                               <!-- &nbsp;{{ icon['Name'] }} -->
                         </a>
                     {% endfor %}
                 </div>
             </div>
         </div>
-        <div class="about-me top-padding-medium bottom-padding-small">
+
+        <div class="about-me top-padding-medium bottom-padding-small" id="about">
             <div class="container col-xl-10 col-xxl-8 px-4">
                 <div class="row align-items-center top-margin-none top-padding-none g-lg-5 ">
                     <div class="col-lg-7 text-light top-margin-none bottom-margin-xsmall top-padding-none bottom-padding-none text-center text-lg-start">
                         <picture>
-                            <source srcset=" {{ url_for('static',filename='/img/cosmoboy_dark.png') }} " type="image/svg+xml">
-                            <img src=" {{ url_for('static',filename='/img/cosmoboy_dark.png') }} " class="img-fluid me-round" alt="...">
+                            <source srcset=" {{ url_for('static',filename='/img/me_pixel.jpg') }} " type="image/svg+xml">
+                            <img src=" {{ url_for('static',filename='/img/me_pixel.jpg') }} " class="img-fluid me-round" alt="...">
                         </picture>
                         <h1 class="display-6 top-margin-xsmall fw-bold lh-1 mb-3">{{ information['About']['Title'] }}</h1>
                         <p class="col-lg-10 fs-5">{{ information['About']['Description'] }}</p>
@@ -81,16 +102,16 @@
                             <form class="p-4 p-md-5 border rounded-3 bg-light">
                                 <legend>Get in Touch</legend>   
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="Full Name">
-                                    <label for="floatingInput">Name</label>
+                                    <input type="text" class="form-control" id="floatingName" placeholder="Full Name">
+                                    <label for="floatingName">Name</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                    <label for="floatingInput">Email address</label>
+                                    <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+                                    <label for="floatingEmail">Email address</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="Message">
-                                    <label for="floatingInput">Message</label>
+                                    <input type="text" class="form-control" id="floatingMessage" placeholder="Message">
+                                    <label for="floatingMessage">Message</label>
                                 </div>
                                 <button class="w-100 btn btn-lg btn-dark" type="submit"> Let Connect </button>
                             </form>

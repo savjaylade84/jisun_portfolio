@@ -17,6 +17,14 @@
             "Name": "instagram",
             "Link": "https://www.instagram.com/savjaylade84/",
             "Icon": "/img/instagram.png"
+        }, {
+            "Name": "X-Twitter",
+            "Link": "https://x.com/Johnjaysonbdel1",
+            "Icon": "/img/twitter.png"
+        },{
+            "Name": "Resume",
+            "Link": "https://drive.google.com/file/d/1h6D_C8-KVDu13i73hI5CINqgVSidcVbp/view?usp=sharing",
+            "Icon": "/img/google.png"
         }
     ],
     "Project_List": [
@@ -41,7 +49,7 @@
         }
     ],
     "Title": "Hello! I'm Jayson from Philippines",
-    "Sub-title": "Aspiring Software Developer & Graphic Designer",
+    "Sub-title": "Software Developer & Graphic Designer",
     "About": {
         "Title": "Little About Me",
         "Description":"I’m passionate about coding and technology, with a focus on bringing ideas to life through both code and design. I work with Python and enjoy creating smart, efficient solutions. Beyond coding, I have a creative side in graphic design—from logos and illustrations to landing pages—and experience in web design that helps me build user-friendly, visually appealing websites. My goal is to blend creativity with technology to craft experiences that leave an impact."
