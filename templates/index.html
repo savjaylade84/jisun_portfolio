@@ -111,8 +111,8 @@
                 <div class="row align-items-center top-margin-none top-padding-none g-lg-5 ">
                     <div class="col-lg-7 text-light top-margin-none bottom-margin-xsmall top-padding-none bottom-padding-none text-center text-lg-start">
                         <picture>
-                            <source srcset=" {{ url_for('static',filename=information['Author-Pixel-Picture']) }} " type="image/svg+xml">
-                            <img src=" {{ url_for('static',filename=information['Author-Pixel-Picture']) }} " class="img-fluid me-round" alt="...">
+                            <source srcset=" {{ information['Author-Pixel-Picture'] }} " type="image/svg+xml">
+                            <img src=" {{ information['Author-Pixel-Picture'] }} " class="img-fluid me-round" alt="...">
                         </picture>
                         <h1 class="display-6 top-margin-xsmall fw-bold lh-1 mb-3">{{ information['About']['Title'] }}</h1>
                         <p class="col-lg-10 fs-5">{{ information['About']['Description'] }}</p>
