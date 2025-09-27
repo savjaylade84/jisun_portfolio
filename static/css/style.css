@@ -110,8 +110,8 @@
 }
 
 .img-art {
-  min-width: 15em;
-  max-width: 20em;
+  min-width: 15rem;
+  max-width: 20rem;
   image-rendering: optimizeQuality;
 }
 
@@ -221,10 +221,16 @@
 }
 
 .padding-vertical-small {
-  padding-left: 5em;
-  padding-right: 5em;
+  padding-left: 5vw;
+  padding-right: 2vw;
 }
 
+@media screen and (max-width: 997px) {
+  .padding-vertical-small {
+    padding-right: 10vw;
+    padding-left: 10vw;
+  }
+}
 .padding-vertical-medium {
   padding-left: 10em;
   padding-right: 10em;
@@ -290,13 +296,18 @@
   z-index: -100;
   width: 100%;
   height: 100%;
-  font-size: 25em;
+  font-size: 23vw;
   text-align: center;
   font-family: roboto, san-serif;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.1rem;
   justify-content: center;
 }
 
+@media screen and (max-width: 997px) {
+  #introduction:before {
+    margin-top: 8rem;
+  }
+}
 /*intro title*/
 .profile-intro-container {
   padding: 3em 1.5em 2em 1.5em;
