@@ -84,8 +84,8 @@
         <div class="introduction  container-sm top-margin-large d-flex d-lg-flex flex-lg-row flex-column-reverse justify-content-center align-items-center" id="introduction">
             <div class="profile-container">
                 <picture>
-                    <source srcset=" {{ information['Author-Picture'] }} " fetchpriority="high" type="image/svg+xml">
-                    <img src=" {{ information['Author-Picture'] }} " class="img-fluid me" alt="...">
+                    <source srcset=" {{ url_for('static',filename=information['Author-Picture']) }} " fetchpriority="high" type="image/svg+xml">
+                    <img src=" {{ url_for('static',filename=information['Author-Picture']) }} " class="img-fluid me" alt="...">
                 </picture>
             </div>
             <div class="profile-intro-container">
@@ -106,16 +106,57 @@
         </div>
 
         <!-- about section -->
-        <div class="about-me top-padding-medium bottom-padding-small" id="about">
+        <div class="purple-hue-bg top-padding-medium bottom-padding-small" id="about">
+            <div class="container top-margin-none top-padding-none">
+                <div class="text-light top-margin-none bottom-margin-xsmall top-padding-none bottom-padding-none text-center text-lg-start">
+                    {% for desc in information['About']['Description'] %}
+                        <div class="about-list bottom-margin-small  align-items-center d-flex d-md-flex flex-md-row flex-column">
+                            <picture>
+                                <source srcset=" {{ url_for('static',filename=desc['img']) }} " type="image/svg+xml">
+                                <img src=" {{  url_for('static',filename=desc['img']) }} " class="img-fluid img-art" alt="...">
+                            </picture>
+                            <div class="bottom-margin-none padding-vertical-small text-justify">
+                                <p class="fs-3">{{ desc['title'] }}</p>
+                                <p class="fs-5">{{ desc['desc'] }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- project -->
+        <div class="card-deck top-margin-medium bottom-margin-medium d-flex justify-content-center flex-wrap" id="projects">
+            {% for project in information['Project_List'] %}  
+                    <div class="card m-2">
+                        <picture>
+                            <source srcset=" {{ url_for('static',filename=information['Default-Picture']) }} " type="image/svg+xml">
+                            <img src=" {{ url_for('static',filename=information['Default-Picture']) }} " class="card-img-top" alt="..." height="180" width="296">
+                        </picture>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ project['Name'] }}</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href=" {{ project['Link'] }} " class="btn button button-gold">Visit Repository</a>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+
+
+        <!-- connect section -->
+        <div class="purple-hue-bg top-padding-small bottom-padding-small" id="about">
+            <!--
             <div class="container col-xl-10 col-xxl-8 px-4">
                 <div class="row align-items-center top-margin-none top-padding-none g-lg-5 ">
+                    <picture>
+                        <source srcset=" {{ url_for('static',filename=information['Author-Pixel-Picture-local']) }} " type="image/svg+xml">
+                        <img src=" {{ information['Author-Pixel-Picture-local'] }} " class="img-fluid me-round bottom-margin-xsmall top-margin-xsmall" alt="...">
+                    </picture>
                     <div class="col-lg-7 text-light top-margin-none bottom-margin-xsmall top-padding-none bottom-padding-none text-center text-lg-start">
-                        <picture>
-                            <source srcset=" {{ information['Author-Pixel-Picture'] }} " type="image/svg+xml">
-                            <img src=" {{ information['Author-Pixel-Picture'] }} " class="img-fluid me-round" alt="...">
-                        </picture>
                         <h1 class="display-6 top-margin-xsmall fw-bold lh-1 mb-3">{{ information['About']['Title'] }}</h1>
-                        <p class="col-lg-10 fs-5">{{ information['About']['Description'] }}</p>
+                        <p class="col-lg-10 fs-5">{{ information['About']['Description'][0] }}</p>
                     </div>
                     <div class="col-md-10 mx-auto col-lg-5 bottom-padding-xsmall top-padding-xsmall ">
                             <form class="p-4 p-md-5 border rounded-3 bg-light">
@@ -137,25 +178,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- project -->
-        <div class="card-deck top-margin-small d-flex justify-content-center flex-wrap" id="projects">
-            {% for project in information['Project_List'] %}  
-                    <div class="card m-2">
-                        <picture>
-                            <source srcset=" {{ url_for('static',filename=information['Default-Picture']) }} " type="image/svg+xml">
-                            <img src=" {{ url_for('static',filename=information['Default-Picture']) }} " class="card-img-top" alt="..." height="180" width="296">
-                        </picture>
-                        <div class="card-body">
-                            <h5 class="card-title">{{ project['Name'] }}</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href=" {{ project['Link'] }} " class="btn button button-gold">Visit Repository</a>
-                        </div>
-                    </div>
-            {% endfor %}
+            -->
         </div>
 
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">

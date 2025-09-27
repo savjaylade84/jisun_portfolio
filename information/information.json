@@ -1,7 +1,8 @@
 {
     "Author": "John Jayson B. De Leon",
-    "Author-Picture":"https://jisun-portfolio.onrender.com/static//img/Jayson.png",
+    "Author-Picture":"/img/Jayson.png",
     "Author-Pixel-Picture":"https://jisun-portfolio.onrender.com/static//img/me_pixel.jpg",
+    "Author-Pixel-Picture-local":"/img/me_pixel.jpg",
     "Logo":"/img/jisun.svg",
     "Default-Picture":"/img/default.jpg",
     "Website":"https://jisun-portfolio.onrender.com/",
@@ -56,8 +57,22 @@
     "Title": "Hello! I'm Jayson from Philippines",
     "Sub-title": "Software Developer & Website Designer",
     "About": {
-        "Title": "Little About Me",
-        "Description":"I’m passionate about coding and technology, with a focus on bringing ideas to life through both code and design. I work with Python and enjoy creating smart, efficient solutions. Beyond coding, I have a creative side in graphic design—from logos and illustrations to landing pages—and experience in web design that helps me build user-friendly, visually appealing websites. My goal is to blend creativity with technology to craft experiences that leave an impact."
+        "Title": "About Myself",
+        "Description":[
+                {   
+                    "title":"My Passion On Coding",
+                    "img":"/img/Programmer-rafiki.png",
+                    "desc":"I’ve always been passionate about coding and technology, and what excites me most is the ability to take an idea and actually bring it to life. For me, coding isn’t just about writing programs—it’s about solving problems, finding smarter ways to do things, and creating something meaningful from scratch. I spend a lot of time working with Python, and I love how versatile it is. Whether it’s building small tools, automating tasks, or working on bigger projects, I enjoy the challenge of turning complex problems into clean, efficient solutions."
+                },{   
+                    "title":"My Passion On Design",
+                    "img":"/img/Design thinking-rafiki.png",
+                    "desc":"But my interests go beyond just coding. I have a strong creative side, and that shows up in my design work. I enjoy working on graphics, from simple logos and illustrations to polished landing pages. Design is a space where I get to play with colors, layouts, and ideas, and I love how it allows me to make projects feel more alive and personal. I also have experience in web design, which really brings everything together. Being able to combine coding with design helps me create websites that are not only functional but also visually appealing and easy to use."
+                },{   
+                    "title":"And Lastly",
+                    "img":"/img/Sao-Paulo-bro.png",
+                    "desc":"At the end of the day, what I enjoy most is blending creativity with technology. I like building things that look good, work well, and leave a lasting impression on the people who use them. That balance between problem-solving and creativity is what keeps me motivated and makes me excited about every new project I take on."
+                }
+        ]
     },
     "seo-title":"Software Developer | Website Designer",
     "seo-description":"I’m a software developer & graphic designer. Explore my portfolio of websites, apps, and creative designs built with code and creativity."  
