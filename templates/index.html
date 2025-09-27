@@ -23,7 +23,7 @@
 			<meta property="og:url" content="{{information['Website']}}">
 			<meta property="og:title" content="{{information['Author']}} - {{information['seo-title']}}">
 			<meta property="og:description" content="{{information['seo-description']}}">
-			<meta property="og:image" content="{{information['Author-Pixel-Picture']}}">
+			<meta property="og:image" content="{{information['Author-Picture']}}">
 
 			<!-- Twitter -->
 			<meta property="twitter:card" content="summary_large_image">
@@ -31,7 +31,7 @@
 			<meta property="twitter:url" content="{{information['Twitter']}}">
 			<meta property="twitter:title" content="{{information['Author']}} - {{information['seo-title']}}">
 			<meta property="twitter:description" content="{{information['seo-description']}}">
-			<meta property="twitter:image" content="{{information['Author-Pixel-Picture']}}">
+			<meta property="twitter:image" content="{{information['Author-Picture']}}">
         
             <!-- website config on the browser -->
 			<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -84,8 +84,8 @@
         <div class="introduction  container-sm top-margin-large d-flex d-lg-flex flex-lg-row flex-column-reverse justify-content-center align-items-center" id="introduction">
             <div class="profile-container">
                 <picture>
-                    <source srcset=" {{ url_for('static',filename=information['Author-Picture']) }} " fetchpriority="high" type="image/svg+xml">
-                    <img src=" {{ url_for('static',filename=information['Author-Picture']) }} " class="img-fluid me" alt="...">
+                    <source srcset=" {{ information['Author-Picture'] }} " fetchpriority="high" type="image/svg+xml">
+                    <img src=" {{ information['Author-Picture'] }} " class="img-fluid me" alt="...">
                 </picture>
             </div>
             <div class="profile-intro-container">
