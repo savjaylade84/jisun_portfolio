@@ -2,8 +2,10 @@
 /* color scheme of portfolio website */
 * {
   font-family: "Lato", sans-serif;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: content-box;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
@@ -107,6 +109,12 @@
   width: 28em;
 }
 
+.img-art {
+  min-width: 15em;
+  max-width: 20em;
+  image-rendering: optimizeQuality;
+}
+
 .me-round {
   border-radius: 100%;
   min-width: 15em;
@@ -201,6 +209,40 @@
   margin-bottom: 15em;
 }
 
+/*padding*/
+.padding-vertical-none {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.padding-vertical-xsmall {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.padding-vertical-small {
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+.padding-vertical-medium {
+  padding-left: 10em;
+  padding-right: 10em;
+}
+
+.padding-vertical-large {
+  padding-left: 15em;
+  padding-right: 15em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
 /* carousel */
 .main-carousel {
   background-color: #1F1D24;
@@ -228,6 +270,10 @@
 
 /* intro */
 .container-sm {
+  padding: 0;
+}
+
+.container {
   padding: 0;
 }
 
@@ -260,8 +306,7 @@
   text-align: center;
 }
 
-/* about me*/
-.about-me {
+.purple-hue-bg {
   background: #ae22c3;
   background: linear-gradient(0deg, rgb(174, 34, 195) 0%, rgb(237, 57, 138) 100%);
 }/*# sourceMappingURL=style.css.map */
