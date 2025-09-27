@@ -1,5 +1,9 @@
 {
     "Author": "John Jayson B. De Leon",
+    "Author-Picture":"/img/Jayson.png",
+    "Author-Pixel-Picture":"/img/me_pixel.jpg",
+    "Logo":"/img/jisun.svg",
+    "Default-Picture":"/img/default.jpg",
     "social_media_icon": [
         {
             "Name": "Github",
