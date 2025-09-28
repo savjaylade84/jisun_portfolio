@@ -36,21 +36,27 @@
     "Project_List": [
         {
             "Name": "Flask Weather App",
+            "Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "Link": "https://github.com/savjaylade84/flask_weather_app"
         }, {
             "Name": "Terminal Bank System",
+            "Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "Link": "https://github.com/savjaylade84/python-bank-system"
         }, {
             "Name": "Pokemon Information Terminal",
+            "Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "Link": "https://github.com/savjaylade84/python_pokedex_terminal"
         }, {
             "Name": "Calorie Tracker",
+            "Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "Link": "https://github.com/savjaylade84/calorie_tracker"
         }, {
             "Name": "Simple My Twitter Post",
+            "Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "Link": "https://github.com/savjaylade84/MyTweeterFeed"
         }, {
             "Name": "My Facebook Page Post",
+            "Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "Link": "https://github.com/savjaylade84/My_Facebook_Page_Post"
         }
     ],

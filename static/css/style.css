@@ -10,24 +10,19 @@
   -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
-*::-webkit-scrollbar { /* WebKit */
-  width: 0;
-  height: 0;
-}
-
 /*projects*/
 .card-deck {
   display: flex;
 }
 .card-deck .card {
   margin: 0.5em;
+  width: 30rem;
 }
 .card-deck .card-body {
-  background-color: #4E2362;
   color: #F5F5F5;
 }
 .card-deck .card-footer {
-  background-color: #4E2362;
+  padding-bottom: 1.5em;
   border: 0px solid transparent;
 }
 
@@ -51,6 +46,7 @@
   align-items: center;
   isolation: isolate;
   position: relative;
+  font-weight: bold;
   background: 0;
   position: relative;
   transition: color 400ms linear;
@@ -60,8 +56,8 @@
   margin-right: 0.4em;
 }
 
-.button-gold::after, .button-black::after {
-  background-color: rgba(202, 158, 12, 0.9);
+.button-white::after {
+  background-color: whitesmoke;
 }
 
 .button::after {
@@ -78,19 +74,13 @@
   transform: scale(1, 1);
 }
 
-.button-gold {
-  border: 0.15em solid rgba(202, 158, 12, 0.9);
-  color: rgba(202, 158, 12, 0.9);
-}
-
-.button-black {
-  border: 0px solid transparent;
-  background-color: #1F1D24;
+.button-white {
+  border: 0.15em solid whitesmoke;
   color: whitesmoke;
 }
 
 .button:hover, .button:focus::after {
-  color: whitesmoke;
+  color: rgba(20, 20, 22, 0.8);
 }
 
 .button-purple {
@@ -312,9 +302,6 @@
 .profile-intro-container {
   padding: 3em 1.5em 2em 1.5em;
   color: #1F1D24;
-  font-weight: bolder;
-  text-transform: uppercase;
-  text-align: center;
 }
 
 .purple-hue-bg {
