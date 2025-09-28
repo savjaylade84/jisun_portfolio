@@ -15,10 +15,6 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 
-*::-webkit-scrollbar { /* WebKit */
-    width: 0;
-    height: 0;
-}
 
 
 
@@ -28,13 +24,13 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
     
     .card{
         margin: 0.5em;
+        width: 30rem;
     }
     .card-body{
-        background-color: #4E2362;
         color: #F5F5F5;
     }
     .card-footer{
-        background-color: #4E2362;
+        padding-bottom: 1.5em;
         border: 0px solid transparent;
     }
 }
@@ -59,6 +55,7 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
     align-items: center; 
     isolation: isolate;
     position: relative;
+    font-weight: bold;
     background: 0;
     position: relative;
     transition: color 400ms linear;
@@ -69,8 +66,8 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
     }
 }
 
-.button-gold::after,.button-black::after{
-    background-color:$accent-color-gold;
+.button-white::after{
+    background-color:$primary-color-white;
 }
 
 
@@ -88,19 +85,13 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
     transform: scale(1,1);
 }
 
-.button-gold{
-    border:0.15em solid $accent-color-gold;
-    color:$accent-color-gold;
-}
-
-.button-black{
-    border: 0px solid transparent;
-    background-color: $primary-color-blackish;
+.button-white{
+    border:0.15em solid $primary-color-white;
     color:$primary-color-white;
 }
 
 .button:hover,.button:focus::after{
-    color: $primary-color-white;
+    color: $primary-color-black;
 }
 
 .button-purple{
@@ -318,9 +309,7 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
 .profile-intro-container{
     padding: 3em 1.5em 2em 1.5em;
     color: $primary-color-blackish;
-    font-weight: bolder;
-    text-transform: uppercase;
-    text-align: center;
+
 }
 
 
