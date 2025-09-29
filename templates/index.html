@@ -147,39 +147,23 @@
 
 
         <!-- connect section -->
-        <div class="purple-hue-bg top-padding-small bottom-padding-small" id="about">
-            <!--
-            <div class="container col-xl-10 col-xxl-8 px-4">
-                <div class="row align-items-center top-margin-none top-padding-none g-lg-5 ">
-                    <picture>
-                        <source srcset=" {{ url_for('static',filename=information['Author-Pixel-Picture-local']) }} " type="image/svg+xml">
-                        <img src=" {{ information['Author-Pixel-Picture-local'] }} " class="img-fluid me-round bottom-margin-xsmall top-margin-xsmall" alt="...">
-                    </picture>
-                    <div class="col-lg-7 text-light top-margin-none bottom-margin-xsmall top-padding-none bottom-padding-none text-center text-lg-start">
-                        <h1 class="display-6 top-margin-xsmall fw-bold lh-1 mb-3">{{ information['About']['Title'] }}</h1>
-                        <p class="col-lg-10 fs-5">{{ information['About']['Description'][0] }}</p>
-                    </div>
-                    <div class="col-md-10 mx-auto col-lg-5 bottom-padding-xsmall top-padding-xsmall ">
-                            <form class="p-4 p-md-5 border rounded-3 bg-light">
-                                <legend>Get in Touch</legend>   
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingName" placeholder="Full Name">
-                                    <label for="floatingName">Name</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
-                                    <label for="floatingEmail">Email address</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingMessage" placeholder="Message">
-                                    <label for="floatingMessage">Message</label>
-                                </div>
-                                <button class="w-100 btn btn-lg btn-dark" type="submit"> Let Connect </button>
-                            </form>
-                    </div>
-                </div>
+        <div class="purple-hue-bg top-padding-small bottom-padding-small justify-content-center d-flex" id="connect">
+<!-- 
+            <form class=" border d-flex justify-content-evenly align-items-stretch flex-column top-padding-small bottom-padding-small bg-light">
+            <div class="form-floating mb-3">
+                 <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                <label for="email">Email Address</label>
             </div>
-            -->
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                <label for="title">Title</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="message" name="message" placeholder="Message">
+                <label for="message">Message</label>
+            </div>
+            <button type="submit" class="w-100 btn btn-lg btn-primary">Let's Connect</button>
+            </form> -->
         </div>
 
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
