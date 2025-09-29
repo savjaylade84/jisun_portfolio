@@ -222,8 +222,8 @@
   }
 }
 .padding-vertical-medium {
-  padding-left: 10em;
-  padding-right: 10em;
+  padding-left: 6em;
+  padding-right: 6em;
 }
 
 .padding-vertical-large {
@@ -293,9 +293,19 @@
   justify-content: center;
 }
 
+/*form of let connect*/
+#connect form {
+  width: 20rem;
+  padding-left: 5em;
+  padding-right: 6.5em;
+}
+
 @media screen and (max-width: 997px) {
   #introduction:before {
     margin-top: 8rem;
+  }
+  #connect form {
+    width: 50vw;
   }
 }
 /*intro title*/
