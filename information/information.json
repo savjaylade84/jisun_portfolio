@@ -4,7 +4,7 @@
     "Author-Pixel-Picture":"https://jisun-portfolio.onrender.com/static//img/me_pixel.jpg",
     "Author-Pixel-Picture-local":"/img/me_pixel.jpg",
     "Logo":"/img/jisun.svg",
-    "Default-Picture":"/img/default.jpg",
+    "Default-Picture":"/img/python-programming-background.jpg",
     "Website":"https://jisun-portfolio.onrender.com/",
     "social_media_icon": [
         {
@@ -36,27 +36,27 @@
     "Project_List": [
         {
             "Name": "Flask Weather App",
-            "Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Description":"Flask Weather App is a Python web application built with Flask that uses the OpenWeatherMap API to display current weather information for cities around the world. It supports typical Flask setup and routing, makes HTTP requests to fetch weather data, and renders results in front-end templates.",
             "Link": "https://github.com/savjaylade84/flask_weather_app"
         }, {
             "Name": "Terminal Bank System",
-            "Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Description":"terminal-based banking app built with Python. It lets users create accounts, deposit or withdraw money, check balances, and view transaction history, while admins can manage accounts and logs. Data is stored in JSON files with hashed and salted encryption for security. It also has ai for financial analysis of each account.",
             "Link": "https://github.com/savjaylade84/python-bank-system"
         }, {
             "Name": "Pokemon Information Terminal",
-            "Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Description":"terminal-based Python app that interfaces with a Pokémon API to let users look up Pokémon data. It provides a command-line Pokédex experience, fetching and displaying information like stats, types, and descriptions for queried Pokémon.",
             "Link": "https://github.com/savjaylade84/python_pokedex_terminal"
         }, {
             "Name": "Calorie Tracker",
-            "Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Description":"terminal-based Python application that helps you log and analyze your daily calorie intake. It records meals, tracks nutritional stats over time, and uses AI-driven analytics to provide insights into eating habits. The app also presents data visually through simple statistical charts, making it easier to understand and improve diet patterns.",
             "Link": "https://github.com/savjaylade84/calorie_tracker"
         }, {
             "Name": "Simple My Twitter Post",
-            "Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Description":"simple web app built with Flask and Tweepy that lets you post and view Twitter feeds. It serves as a lightweight interface for interacting with the Twitter API, handling authentication and posting functionality, with frontend templates for display.",
             "Link": "https://github.com/savjaylade84/MyTweeterFeed"
         }, {
             "Name": "My Facebook Page Post",
-            "Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Description":"Flask-based Python application that integrates with the Facebook Graph API to allow posting directly to a Facebook Page. It handles user authentication, permissions, and posting workflows, letting you manage page content programmatically via a web interface.",
             "Link": "https://github.com/savjaylade84/My_Facebook_Page_Post"
         }
     ],
