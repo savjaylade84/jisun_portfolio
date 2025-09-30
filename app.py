@@ -1,24 +1,32 @@
-from flask import Flask,render_template,url_for,jsonify,request
-from flask_mail import Mail, Message
-import json
+from flask import Flask,render_template,redirect,url_for,request
+#from flask_mail import Mail, Message
+from email.message import EmailMessage
 from dotenv import load_dotenv
+import json
 import os
+import ssl
+import smtplib
 
 app = Flask(__name__)
+load_dotenv()
 information:dict = {}
 
-load_dotenv()
+app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER')
+app.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT'))
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+app.config['MAIL_SENDER'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_DEFAULT_SENDER')
+app.config['MAIL_USE_SSL'] = os.environ.get('MAIL_USE_SSL')
+app.config['MAIL_USE_TLS'] = os.environ.get('MAIL_USE_TLS')
+app.config['MAIL_DEBUG'] = os.environ.get('MAIL_DEBUG')
+app.config['MAIL_RECEIVER'] = os.environ.get('MAIL_RECEIVER')
+app.config['TESTING'] = os.environ.get('TESTING')
+app.config['MAIL_SUPPRESS_SEND'] = os.environ.get('MAIL_SUPPRESS_SEND')
 
-# config for email sending
-app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
-app.config['MAIL_PORT'] = os.getenv('MAIL_PORT')
-app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
-app.config['MAIL_USE_TLS'] = os.getenv('MAIL_USE_TLS')
-app.config['MAIL_USE_SSL'] = os.getenv('MAIL_USE_SSL')
-app.config['MAIL_DEFAULT_SENDER'] = ('<your name sender>', '<your-email>@gmail.com')
 
-mail = Mail(app)
+#mail = Mail(app)
+
 
 def load_information() -> dict:
     with open("information/information.json",'r') as file:
@@ -26,27 +34,36 @@ def load_information() -> dict:
     
     return {}
 
-""" @app.route('/send_email', methods=['POST'])
-def send_email():
-    data = request.get_json()
-
-    subject = data.get('title')
-    recipient = data.get('email')   # single recipient
-    body = data.get('message')
-
-    if not subject or not recipient or not body:
-        return jsonify({"message": "The fields title, email, and message are required"}), 400
-
-    msg = Message(
-        subject=subject,
-        recipients=[recipient],  # still needs to be a list
-        body=body
-    )
-    mail.send(msg)
-
-    return jsonify({"message": "Email sent successfully"}), 200 """
-
     
+@app.route('/send_email', methods=['POST'])
+def send_email():
+
+    # create secure connection with server and send email
+    context = ssl.create_default_context()
+
+    # get form data from request object
+    name = request.form.get('name', 'No Name')
+    subject = f"New Message(Portfolio) from {name} | Subject: {request.form.get('subject', 'No Subject')}"
+    sender = app.config['MAIL_SENDER']
+    receiver = app.config['MAIL_RECEIVER']
+    body = request.form.get('message', '')
+
+    # create email message and set headers
+    email_message = EmailMessage()
+    email_message['Subject'] = subject
+    email_message['From'] = sender
+    email_message['To'] = receiver
+    email_message.set_content(body)
+
+    try:
+        with smtplib.SMTP_SSL(app.config['MAIL_SERVER'], app.config['MAIL_PORT'], context=context) as server:
+            server.login(app.config['MAIL_USERNAME'], app.config['MAIL_PASSWORD'])
+            server.send_message(email_message)
+        return redirect(url_for('index'))
+    except Exception as e:
+        print(f"Error sending email: {e}")
+        return "Failed to send email", 500
+
 
 @app.route("/", methods = ['GET','POST'])
 def index():
@@ -55,5 +72,4 @@ def index():
 
 
 if __name__ == '__main__':
-        port = int(os.environ.get('PORT', 5000))
-        app.run(debug=True, host='0.0.0.0', port=port)
+        app.run(debug=True)
