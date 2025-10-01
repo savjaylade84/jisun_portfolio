@@ -25,9 +25,14 @@ textarea {
 }
 .card-deck .card-body {
   color: #F5F5F5;
+  padding-top: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 .card-deck .card-footer {
   padding-bottom: 1.5em;
+  padding-left: 2rem;
+  padding: 2em;
   border: 0px solid transparent;
 }
 
@@ -100,11 +105,11 @@ textarea {
   color: rgba(20, 20, 22, 0.8);
 }
 
-.button-white:hover, .button-white:focus::after {
+.button-white:hover, .button-white:focus::after, .button-white:active, .button-white:active::after {
   color: rgba(20, 20, 22, 0.8);
 }
 
-.button-black:hover, .button-black:focus::after {
+.button-black:hover, .button-black:focus::after, .button-black:active, .button-black:active::after {
   color: whitesmoke;
 }
 
@@ -148,6 +153,10 @@ textarea {
   padding-top: 0px;
 }
 
+.top-padding-xxsmall {
+  padding-top: 1em;
+}
+
 .top-padding-xsmall {
   padding-top: 1.5em;
 }
@@ -166,6 +175,10 @@ textarea {
 
 .bottom-padding-none {
   padding-bottom: 0px;
+}
+
+.bottom-padding-xxsmall {
+  padding-bottom: 1em;
 }
 
 .bottom-padding-xsmall {
@@ -188,6 +201,10 @@ textarea {
   margin-top: 0px;
 }
 
+.top-margin-xxsmall {
+  margin-top: 1em;
+}
+
 .top-margin-xsmall {
   margin-top: 1.5em;
 }
@@ -206,6 +223,10 @@ textarea {
 
 .bottom-margin-none {
   margin-bottom: 0px;
+}
+
+.bottom-margin-xxsmall {
+  margin-bottom: 1em;
 }
 
 .bottom-margin-xsmall {
@@ -228,6 +249,11 @@ textarea {
 .padding-vertical-none {
   padding-left: 0px;
   padding-right: 0px;
+}
+
+.padding-vertical-xxsmall {
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .padding-vertical-xsmall {
@@ -298,6 +324,10 @@ textarea {
   padding: 0;
 }
 
+#introduction {
+  padding-top: 20em;
+}
+
 /*background text logo*/
 #introduction:before {
   display: flex;
@@ -340,7 +370,7 @@ textarea {
 
 @media screen and (max-width: 997px) {
   #introduction:before {
-    margin-top: 8rem;
+    padding-top: 15rem;
   }
   #connect form {
     width: 50vw;

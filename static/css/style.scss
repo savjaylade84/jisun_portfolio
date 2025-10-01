@@ -30,9 +30,14 @@ textarea{
     }
     .card-body{
         color: #F5F5F5;
+        padding-top: 2em;
+        padding-left: 2em;
+        padding-right: 2em;
     }
     .card-footer{
         padding-bottom: 1.5em;
+        padding-left: 2rem;
+        padding: 2em;
         border: 0px solid transparent;
     }
 }
@@ -108,11 +113,11 @@ textarea{
     color:$primary-color-black;
 }
 
-.button-white:hover,.button-white:focus::after{
+.button-white:hover,.button-white:focus::after,.button-white:active,.button-white:active::after{
     color: $primary-color-black;
 }
 
-.button-black:hover,.button-black:focus::after{
+.button-black:hover,.button-black:focus::after,.button-black:active,.button-black:active::after{
     color: $primary-color-white;
 }
 
@@ -152,6 +157,11 @@ textarea{
 .top-padding-none{
     padding-top:0px;
 }
+
+.top-padding-xxsmall{
+    padding-top:1em;
+}
+
 .top-padding-xsmall{
     padding-top:1.5em;
 }
@@ -170,6 +180,11 @@ textarea{
 .bottom-padding-none{
     padding-bottom:0px;
 }
+
+.bottom-padding-xxsmall{
+    padding-bottom:1em;
+}
+
 .bottom-padding-xsmall{
     padding-bottom:1.5em;
 }
@@ -188,6 +203,11 @@ textarea{
 .top-margin-none{
     margin-top:0px;
 }
+
+.top-margin-xxsmall{
+    margin-top:1em;
+}
+
 .top-margin-xsmall{
     margin-top:1.5em;
 }
@@ -206,6 +226,11 @@ textarea{
 .bottom-margin-none{
     margin-bottom:0px;
 }
+
+.bottom-margin-xxsmall{
+    margin-bottom:1em;
+}
+
 .bottom-margin-xsmall{
     margin-bottom:1.5em;
 }
@@ -229,6 +254,12 @@ textarea{
     padding-left:0px;
     padding-right: 0px;
 }
+
+.padding-vertical-xxsmall{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
 .padding-vertical-xsmall{
     padding-left: 1.5em;
     padding-right: 1.5em;
@@ -300,6 +331,10 @@ textarea{
     padding: 0;
 }
 
+#introduction{
+    padding-top: 20em;
+}
+
 
 /*background text logo*/
 #introduction:before {
@@ -345,7 +380,7 @@ textarea{
 
 @media screen and (max-width: 997px) {
     #introduction:before{
-        margin-top: 8rem;
+        padding-top: 15rem;
     }
 
     #connect{
