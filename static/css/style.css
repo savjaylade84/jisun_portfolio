@@ -10,6 +10,11 @@
   -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
+/*disable textarea resizing*/
+textarea {
+  resize: none;
+}
+
 /*projects*/
 .card-deck {
   display: flex;
@@ -56,8 +61,19 @@
   margin-right: 0.4em;
 }
 
+.button-text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .button-white::after {
   background-color: whitesmoke;
+}
+
+.button-black::after {
+  background-color: rgba(20, 20, 22, 0.8);
 }
 
 .button::after {
@@ -79,8 +95,17 @@
   color: whitesmoke;
 }
 
-.button:hover, .button:focus::after {
+.button-black {
+  border: 0.15em solid rgba(20, 20, 22, 0.8);
   color: rgba(20, 20, 22, 0.8);
+}
+
+.button-white:hover, .button-white:focus::after {
+  color: rgba(20, 20, 22, 0.8);
+}
+
+.button-black:hover, .button-black:focus::after {
+  color: whitesmoke;
 }
 
 .button-purple {
@@ -101,7 +126,7 @@
 
 .img-art {
   min-width: 15rem;
-  max-width: 20rem;
+  max-width: 23rem;
   image-rendering: optimizeQuality;
 }
 
@@ -296,8 +321,21 @@
 /*form of let connect*/
 #connect form {
   width: 20rem;
-  padding-left: 5em;
-  padding-right: 6.5em;
+  padding-left: 3em;
+  padding-right: 5.5em;
+  padding-top: 3em;
+  padding-bottom: 2em;
+}
+#connect .connect-title {
+  padding-bottom: 0.5em;
+}
+#connect .connect-text {
+  padding-left: 0em;
+  padding-right: 4.5em;
+}
+#connect .connect-text p {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 @media screen and (max-width: 997px) {
@@ -306,6 +344,10 @@
   }
   #connect form {
     width: 50vw;
+  }
+  #connect .connect-text {
+    padding-right: 1em;
+    padding-left: 1em;
   }
 }
 /*intro title*/

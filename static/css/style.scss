@@ -15,8 +15,10 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 
-
-
+/*disable textarea resizing*/
+textarea{
+    resize: none;
+}
 
 /*projects*/
 .card-deck{
@@ -66,8 +68,19 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
     }
 }
 
+.button-text-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .button-white::after{
     background-color:$primary-color-white;
+}
+
+.button-black::after{
+    background-color:$primary-color-black;
 }
 
 
@@ -90,8 +103,17 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
     color:$primary-color-white;
 }
 
-.button:hover,.button:focus::after{
+.button-black{
+    border:0.15em solid $primary-color-black;
+    color:$primary-color-black;
+}
+
+.button-white:hover,.button-white:focus::after{
     color: $primary-color-black;
+}
+
+.button-black:hover,.button-black:focus::after{
+    color: $primary-color-white;
 }
 
 .button-purple{
@@ -110,7 +132,7 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
 }
 .img-art{
     min-width: 15rem;
-    max-width: 20rem;
+    max-width: 23rem;
     image-rendering: optimizeQuality;
 }
 .me-round{
@@ -303,8 +325,21 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
 #connect{
     form{
         width: 20rem;
-        padding-left: 5em;
-        padding-right: 6.5em;
+        padding-left: 3em;
+        padding-right: 5.5em;
+        padding-top: 3em;
+        padding-bottom: 2em;
+    }
+    .connect-title{
+        padding-bottom: 0.5em;
+    }
+    .connect-text{
+        padding-left: 0em;
+        padding-right: 4.5em;
+        p{
+            display: flex;
+            justify-content: space-evenly;
+        }
     }
 }
 
@@ -316,6 +351,10 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
     #connect{
         form{
             width: 50vw;
+        }
+        .connect-text{
+            padding-right: 1em;
+            padding-left: 1em;
         }
     }
 }

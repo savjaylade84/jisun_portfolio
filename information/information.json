@@ -5,7 +5,8 @@
     "Author-Pixel-Picture-local":"/img/me_pixel.jpg",
     "Logo":"/img/jisun.svg",
     "Default-Picture":"/img/python-programming-background.jpg",
-    "Website":"https://jisun-portfolio.onrender.com/",
+    "Let-Connect-Image":"/img/Business_merger-rafiki.png",
+    "Website":"https://savjalade84.pythonanywhere.com/",
     "social_media_icon": [
         {
             "Name": "Github",
@@ -81,5 +82,12 @@
         ]
     },
     "seo-title":"Software Developer | Website Designer",
-    "seo-description":"I’m a software developer & graphic designer. Explore my portfolio of websites, apps, and creative designs built with code and creativity."  
+    "seo-description":"I’m a software developer & graphic designer. Explore my portfolio of websites, apps, and creative designs built with code and creativity.",
+    "connect-title":"Let's Connect",
+    "connect-description":[
+            {"desc":"Questions, suggestions, or collaboration opportunities?"},
+            {"desc":"I’m always happy to talk about software, technology, and new ideas. "},
+            {"desc":"Drop me a message anytime!"}
+    ]
+   
 }

@@ -43,10 +43,11 @@ def send_email():
 
     # get form data from request object
     name = request.form.get('name', 'No Name')
-    subject = f"New Message(Portfolio) from {name} | Subject: {request.form.get('subject', 'No Subject')}"
+    email = request.form.get('email', 'No Email')
+    subject = f"New Message(Portfolio) from {email} | Subject: {request.form.get('subject', 'No Subject')}"
     sender = app.config['MAIL_SENDER']
     receiver = app.config['MAIL_RECEIVER']
-    body = request.form.get('message', '')
+    body = f'Email:{email} \r\n Name:{name} \r\n Message:{request.form.get('message', '')}'
 
     # create email message and set headers
     email_message = EmailMessage()

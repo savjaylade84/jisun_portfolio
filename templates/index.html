@@ -135,7 +135,7 @@
                             <img src=" {{ url_for('static',filename=information['Default-Picture']) }} " class="card-img-top" alt="..." height="180" width="296">
                         </picture>
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">{{ project['Name'] }}</h5>
+                            <h5 class="card-title fw-bold bottom-padding-xsmall ">{{ project['Name'] }}</h5>
                             <p class="card-text text-justify text-wrap">{{ project['Description'] }}</p>
                         </div>
                         <div class="card-footer">
@@ -147,8 +147,22 @@
 
 
         <!-- connect section -->
-        <div class="purple-hue-bg top-padding-small bottom-padding-small justify-content-center d-flex" id="connect"> 
-            <form class=" border d-flex justify-content-evenly align-items-stretch flex-column top-padding-small bottom-padding-small bg-light" action="/send_email" method="POST">
+        <div class="purple-hue-bg top-padding-medium bottom-padding-small d-flex flex-lg-row flex-column justify-content-center align-items-center" id="connect">
+            <div class="connect-text text-light top-margin-none bottom-margin-xsmall text-center top-padding-none bottom-padding-none text-lg-start">
+                <p class="display-5 bottom-margin-none connect-title">{{ information['connect-title'] }}</p>
+                {% for desc in information['connect-description'] %}
+                    <p class="fs-5">{{ desc['desc'] }}</p>
+                {% endfor %}
+                <picture>
+                    <source srcset=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " type="image/svg+xml">
+                    <img src=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " class="card-img-top" alt="..." height="600" width="220">
+                </picture>
+            </div>
+            <form class=" border d-flex justify-content-evenly align-items-stretch flex-column bg-light" action="/send_email" method="POST">
+            <div class="form-floating mb-3">
+                 <input type="email" class="form-control" id="email" name="email" placeholder="email">
+                <label for="email">Email</label>
+            </div>
             <div class="form-floating mb-3">
                  <input type="text" class="form-control" id="name" name="name" placeholder="fullname">
                 <label for="name">Name</label>
@@ -158,10 +172,10 @@
                 <label for="subject">Subject</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="message" name="message" placeholder="Message">
+                <textarea class="form-control" id="message" name="message" placeholder="Message"></textarea>
                 <label for="message">Message</label>
             </div>
-            <button type="submit" class="w-100 btn btn-lg btn-primary">Let's Connect</button>
+            <button type="submit" class="w-100 btn button button-black button-text-center" rows="4" column="50">Let's Connect</button>
             </form>
         </div>
 
