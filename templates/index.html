@@ -74,6 +74,9 @@
                     <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item fs-5">
+                    <a class="nav-link" href="#connect">Contact</a>
+                    </li>
+                    <li class="nav-item fs-5">
                     <a class="nav-link" href="#blog">Blog</a>
                     </li>
                 </ul>
@@ -82,7 +85,7 @@
         </nav>
 
         <!-- hero or introduction section -->
-        <div class="introduction  container-sm top-margin-large d-flex d-lg-flex flex-lg-row flex-column-reverse justify-content-center align-items-center" id="introduction">
+        <div class="introduction  container-sm top-padding-large d-flex d-lg-flex flex-lg-row flex-column-reverse justify-content-center align-items-center" id="introduction">
             <div class="profile-container">
                 <picture>
                     <source srcset=" {{ url_for('static',filename=information['Author-Picture']) }} " fetchpriority="high" type="image/svg+xml">
@@ -107,14 +110,14 @@
         </div>
 
         <!-- about section -->
-        <div class="purple-hue-bg top-padding-medium bottom-padding-small" id="about">
+        <div class="purple-hue-bg top-padding-medium bottom-padding-medium" id="about">
             <div class="container top-margin-none top-padding-none">
                 <div class="text-light top-margin-none bottom-margin-xsmall top-padding-none bottom-padding-none text-center text-lg-start">
                     {% for desc in information['About']['Description'] %}
-                        <div class="about-list bottom-margin-small  align-items-center d-flex d-md-flex flex-md-row flex-column">
+                        <div class="about-list bottom-margin-xxsmall  align-items-center d-flex d-md-flex flex-md-row flex-column">
                             <picture>
                                 <source srcset=" {{ url_for('static',filename=desc['img']) }} " type="image/svg+xml">
-                                <img src=" {{  url_for('static',filename=desc['img']) }} " class="img-fluid img-art bottom-margin-xsmall" alt="...">
+                                <img src=" {{  url_for('static',filename=desc['img']) }} " class="img-fluid img-art " alt="...">
                             </picture>
                             <div class="bottom-margin-none padding-vertical-small text-justify">
                                 <p class="fs-3 fw-bold text-capitalize">{{ desc['title'] }}</p>
@@ -127,15 +130,15 @@
         </div>
 
         <!-- project -->
-        <div class="card-deck top-margin-medium bottom-margin-medium d-flex justify-content-center flex-wrap" id="projects">
+        <div class="card-deck top-padding-medium bottom-padding-medium d-flex justify-content-center flex-wrap" id="projects">
             {% for project in information['Project_List'] %}  
                     <div class="card m-2 purple-hue-bg">
                         <picture>
                             <source srcset=" {{ url_for('static',filename=information['Default-Picture']) }} " type="image/svg+xml">
-                            <img src=" {{ url_for('static',filename=information['Default-Picture']) }} " class="card-img-top" alt="..." height="180" width="296">
+                            <img src=" {{ url_for('static',filename=information['Default-Picture']) }} " class="card-img-top" alt="...">
                         </picture>
                         <div class="card-body">
-                            <h5 class="card-title fw-bold bottom-padding-xsmall ">{{ project['Name'] }}</h5>
+                            <h5 class="card-title fw-bold bottom-padding-xxsmall ">{{ project['Name'] }}</h5>
                             <p class="card-text text-justify text-wrap">{{ project['Description'] }}</p>
                         </div>
                         <div class="card-footer">
@@ -148,17 +151,17 @@
 
         <!-- connect section -->
         <div class="purple-hue-bg top-padding-medium bottom-padding-small d-flex flex-lg-row flex-column justify-content-center align-items-center" id="connect">
-            <div class="connect-text text-light top-margin-none bottom-margin-xsmall text-center top-padding-none bottom-padding-none text-lg-start">
+            <div class="connect-text text-light top-margin-none bottom-margin-xsmall text-center top-padding-none bottom-padding-none text-lg-center">
                 <p class="display-5 bottom-margin-none connect-title">{{ information['connect-title'] }}</p>
                 {% for desc in information['connect-description'] %}
                     <p class="fs-5">{{ desc['desc'] }}</p>
                 {% endfor %}
                 <picture>
                     <source srcset=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " type="image/svg+xml">
-                    <img src=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " class="card-img-top" alt="..." height="600" width="220">
+                    <img src=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " class="card-img-top img-art " alt="..." >
                 </picture>
             </div>
-            <form class=" border d-flex justify-content-evenly align-items-stretch flex-column bg-light" action="/send_email" method="POST">
+            <form class=" border d-flex justify-content-evenly align-items-stretch bottom-margin-small flex-column bg-light" action="/send_email" method="POST">
             <div class="form-floating mb-3">
                  <input type="email" class="form-control" id="email" name="email" placeholder="email">
                 <label for="email">Email</label>
