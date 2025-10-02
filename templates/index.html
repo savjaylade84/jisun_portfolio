@@ -59,9 +59,11 @@
                     <img src="{{ url_for('static',filename=information['Logo']) }}" width="30" height="30" class="d-inline-block align-top" alt="">
                     &nbsp; JISUN
                 </a>
+                <!-- mobile menu button -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
+                <!-- menu items -->
                 <div class="collapse justify-content-center text-center navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -86,12 +88,14 @@
 
         <!-- hero or introduction section -->
         <div class="introduction  container-sm top-padding-large d-flex d-lg-flex flex-lg-row flex-column-reverse justify-content-center align-items-center" id="introduction">
+            <!-- profile picture -->
             <div class="profile-container">
                 <picture>
                     <source srcset=" {{ url_for('static',filename=information['Author-Picture']) }} " fetchpriority="high" type="image/svg+xml">
                     <img src=" {{ url_for('static',filename=information['Author-Picture']) }} " class="img-fluid me" alt="...">
                 </picture>
             </div>
+            <!-- profile intro -->
             <div class="profile-intro-container fw-bolder text-center text-uppercase">
                 <div class="bottom-padding-xsmall">
                     <p class="h2 bottom-margin-none ">{{ information['Sub-title'] }}</p>
@@ -114,6 +118,7 @@
             <div class="container top-margin-none top-padding-none">
                 <div class="text-light top-margin-none bottom-margin-xsmall top-padding-none bottom-padding-none text-center text-lg-start">
                     {% for desc in information['About']['Description'] %}
+                        <!-- about item -->
                         <div class="about-list bottom-margin-xxsmall  align-items-center d-flex d-md-flex flex-md-row flex-column">
                             <picture>
                                 <source srcset=" {{ url_for('static',filename=desc['img']) }} " type="image/svg+xml">
@@ -131,7 +136,9 @@
 
         <!-- project -->
         <div class="card-deck top-padding-medium bottom-padding-medium d-flex justify-content-center flex-wrap" id="projects">
-            {% for project in information['Project_List'] %}  
+            {% for project in information['Project_List'] %}
+
+                    <!-- project item -->
                     <div class="card m-2 purple-hue-bg">
                         <picture>
                             <source srcset=" {{ url_for('static',filename=information['Default-Picture']) }} " type="image/svg+xml">
@@ -153,6 +160,7 @@
         <div class="purple-hue-bg top-padding-medium bottom-padding-small d-flex flex-lg-row flex-column justify-content-center align-items-center" id="connect">
             <div class="connect-text text-light top-margin-none bottom-margin-xsmall text-center top-padding-none bottom-padding-none text-lg-center">
                 <p class="display-5 bottom-margin-none connect-title">{{ information['connect-title'] }}</p>
+                <!-- connect description -->
                 {% for desc in information['connect-description'] %}
                     <p class="fs-5">{{ desc['desc'] }}</p>
                 {% endfor %}
@@ -161,6 +169,7 @@
                     <img src=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " class="card-img-top img-art " alt="..." >
                 </picture>
             </div>
+            <!-- connect form -->
             <form class=" border d-flex justify-content-evenly align-items-stretch bottom-margin-small flex-column bg-light" action="/send_email" method="POST">
             <div class="form-floating mb-3">
                  <input type="email" class="form-control" id="email" name="email" placeholder="email">
