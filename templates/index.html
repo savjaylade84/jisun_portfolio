@@ -146,6 +146,11 @@
                         </picture>
                         <div class="card-body">
                             <h5 class="card-title fw-bold bottom-padding-xxsmall ">{{ project['Name'] }}</h5>
+                            <div class="d-flex flex-row flex-wrap bottom-padding-xxsmall">
+                                {% for icon in project['img-icon'] %}
+                                    <img src="{{ url_for('static',filename=icon) }}" class = "programming-icon m-1" width="32" height="32"/>
+                                {% endfor %}
+                            </div>
                             <p class="card-text text-justify text-wrap">{{ project['Description'] }}</p>
                         </div>
                         <div class="card-footer">
