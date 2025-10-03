@@ -308,6 +308,10 @@ textarea {
 }
 
 /* buttons of social media */
+.social-media-icon {
+  text-decoration: none;
+}
+
 .social-media-buttons {
   text-align: center;
 }
@@ -391,7 +395,27 @@ textarea {
   color: #1F1D24;
 }
 
+/*footer*/
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .card-group {
+  border: 0;
+  background-color: transparent;
+}
+footer .card-group .card {
+  border: 0;
+  background-color: transparent;
+}
+
 .purple-hue-bg {
   background: #ae22c3;
   background: linear-gradient(0deg, rgb(174, 34, 195) 0%, rgb(237, 57, 138) 100%);
+}
+
+.black-bg {
+  background-color: rgba(20, 20, 22, 0.8);
+  color: whitesmoke;
 }/*# sourceMappingURL=style.css.map */

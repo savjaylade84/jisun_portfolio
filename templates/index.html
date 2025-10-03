@@ -55,34 +55,35 @@
         <!-- navigation section -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class=" container-fluid mx-auto">
+
                 <a class="navbar-brand fw-bold" href="#"> &nbsp;
                     <img src="{{ url_for('static',filename=information['Logo']) }}" width="30" height="30" class="d-inline-block align-top" alt="">
                     &nbsp; JISUN
                 </a>
+
                 <!-- mobile menu button -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <!-- menu items -->
                 <div class="collapse justify-content-center text-center navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active fs-5" aria-current="page" href="#introduction">Home</a>
-                    </li>
-                    <li class="nav-item fs-5">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item fs-5">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item fs-5">
-                        <a class="nav-link" href="#blog">Blog</a>
-                    </li>
-                    <li class="nav-item fs-5">
-                        <a class="nav-link" href="#connect">Contact</a>
-                    </li>
-                </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active fs-5" aria-current="page" href="#introduction">Home</a>
+                        </li>
+                        <li class="nav-item fs-5">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item fs-5">
+                            <a class="nav-link" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-item fs-5">
+                            <a class="nav-link" href="#connect">Contact</a>
+                        </li>
+                    </ul>
                 </div>
+
             </div>
         </nav>
 
@@ -90,16 +91,20 @@
         <div class="introduction  container-sm top-padding-large d-flex d-lg-flex flex-lg-row flex-column-reverse justify-content-center align-items-center" id="introduction">
             <!-- profile picture -->
             <div class="profile-container">
+
                 <picture>
                     <source srcset=" {{ url_for('static',filename=information['Author-Picture']) }} " fetchpriority="high" type="image/svg+xml">
                     <img src=" {{ url_for('static',filename=information['Author-Picture']) }} " class="img-fluid me" alt="...">
                 </picture>
+
             </div>
             <!-- profile intro -->
             <div class="profile-intro-container fw-bolder text-center text-uppercase">
+
                 <div class="bottom-padding-xsmall">
                     <p class="h2 bottom-margin-none ">{{ information['Sub-title'] }}</p>
                 </div>
+
                 <div class="social-media-buttons">
                     {% for icon in information['social_media_icon'] %}
                         <a href="{{ icon['Link'] }}" class=" btn btn-md btn-dark align-items-center">
@@ -120,14 +125,17 @@
                     {% for desc in information['About']['Description'] %}
                         <!-- about item -->
                         <div class="about-list bottom-margin-xxsmall  align-items-center d-flex d-md-flex flex-md-row flex-column">
+
                             <picture>
                                 <source srcset=" {{ url_for('static',filename=desc['img']) }} " type="image/svg+xml">
                                 <img src=" {{  url_for('static',filename=desc['img']) }} " class="img-fluid img-art " alt="...">
                             </picture>
+
                             <div class="bottom-margin-none padding-vertical-small text-justify">
                                 <p class="fs-3 fw-bold text-capitalize">{{ desc['title'] }}</p>
                                 <p class="fs-5 lh-sm">{{ desc['desc'] }}</p>
                             </div>
+
                         </div>
                     {% endfor %}
                 </div>
@@ -137,25 +145,32 @@
         <!-- project -->
         <div class="card-deck top-padding-medium bottom-padding-medium d-flex justify-content-center flex-wrap" id="projects">
             {% for project in information['Project_List'] %}
-
                     <!-- project item -->
                     <div class="card m-2 purple-hue-bg">
+
                         <picture>
                             <source srcset=" {{ url_for('static',filename=information['Default-Picture']) }} " type="image/svg+xml">
                             <img src=" {{ url_for('static',filename=information['Default-Picture']) }} " class="card-img-top" alt="...">
                         </picture>
+
                         <div class="card-body">
+
                             <h5 class="card-title fw-bold bottom-padding-xxsmall ">{{ project['Name'] }}</h5>
+
                             <div class="d-flex flex-row flex-wrap bottom-padding-xxsmall">
                                 {% for icon in project['img-icon'] %}
                                     <img src="{{ url_for('static',filename=icon) }}" class = "programming-icon m-1" width="32" height="32"/>
                                 {% endfor %}
                             </div>
+
                             <p class="card-text text-justify text-wrap">{{ project['Description'] }}</p>
+
                         </div>
+
                         <div class="card-footer">
                             <a href=" {{ project['Link'] }} " class="btn button button-white">Visit Repository</a>
                         </div>
+
                     </div>
             {% endfor %}
         </div>
@@ -163,46 +178,78 @@
 
         <!-- connect section -->
         <div class="purple-hue-bg top-padding-medium bottom-padding-small d-flex flex-lg-row flex-column justify-content-center align-items-center" id="connect">
+            
+            <!-- connect text -->
             <div class="connect-text text-light top-margin-none bottom-margin-xsmall text-center top-padding-none bottom-padding-none text-lg-center">
+
                 <p class="display-5 bottom-margin-none connect-title">{{ information['connect-title'] }}</p>
+
                 <!-- connect description -->
                 {% for desc in information['connect-description'] %}
                     <p class="fs-5">{{ desc['desc'] }}</p>
                 {% endfor %}
+
                 <picture>
                     <source srcset=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " type="image/svg+xml">
                     <img src=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " class="card-img-top img-art " alt="..." >
                 </picture>
+
             </div>
+
             <!-- connect form -->
             <form class=" border d-flex justify-content-evenly align-items-stretch bottom-margin-small flex-column bg-light" action="/send_email" method="POST">
-            <div class="form-floating mb-3">
-                 <input type="email" class="form-control" id="email" name="email" placeholder="email">
-                <label for="email">Email</label>
-            </div>
-            <div class="form-floating mb-3">
-                 <input type="text" class="form-control" id="name" name="name" placeholder="fullname">
-                <label for="name">Name</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
-                <label for="subject">Subject</label>
-            </div>
-            <div class="form-floating mb-3">
-                <textarea class="form-control" id="message" name="message" placeholder="Message"></textarea>
-                <label for="message">Message</label>
-            </div>
-            <button type="submit" class="w-100 btn button button-black button-text-center" rows="4" column="50">Let's Connect</button>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="email">
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="fullname">
+                    <label for="name">Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
+                    <label for="subject">Subject</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="message" name="message" placeholder="Message"></textarea>
+                    <label for="message">Message</label>
+                </div>
+                    <button type="submit" class="w-100 btn button button-black button-text-center" rows="4" column="50">Let's Connect</button>
             </form>
+
         </div>
 
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <!-- footer section -->
+        <footer class="text-lg-start text-light top-padding-small bottom-padding-xsmall padding-vertical-small black-bg " id="footer">
+            <!-- contact information and social media icon -->
+            <div class="container d-flex flex-lg-row flex-column">
 
+                <!-- contact information -->
+                <div class="container bottom-margin-xxsmall">
+                    <h5 class="text-uppercase fw-bold bottom-padding-none">Contact Information</h5>
+                    <p class="bottom-margin-none"> {{ information['primary-email'] }}</p>
+                    <p class="bottom-margin-none"> {{ information['secondary-email'] }}</p>
+                    <p class="bottom-margin-none"> {{ information['phone-number'] }}</p>
+                </div>
 
-        <form>
+                <!-- social media icon -->
+                <div class="container bottom-margin-xxsmall">
+                    <h5 class="text-uppercase fw-bold bottom-padding-none">Social Media</h5>
+                    {% for icon in information['social_media_icon'] %}
+                        <a href="{{ icon['Link'] }}" class=" align-items-center m-1 social-media-icon">
+                            <span>
+                                <img src="{{ url_for('static',filename=icon['Icon']) }}" class = "icon" width="16" height="16"/>
+                            </span>
+                        </a>
+                    {% endfor %}
+                </div>
+                
+            </div>
             
-        </form>
+        </footer>
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>

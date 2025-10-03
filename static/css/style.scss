@@ -316,6 +316,9 @@ textarea{
 }
 
 /* buttons of social media */
+.social-media-icon{
+    text-decoration: none;
+}
 .social-media-buttons{
     text-align: center;
     a{
@@ -406,9 +409,27 @@ textarea{
 
 }
 
+/*footer*/
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .card-group{
+        border:0;
+        background-color: transparent;
+        .card{
+            border:0;
+            background-color: transparent;
+        }
+    }
+}
 
 .purple-hue-bg{
     background: #ae22c3;
     background: linear-gradient(0deg,rgba(174, 34, 195, 1) 0%, rgba(237, 57, 138, 1) 100%);
+}
+.black-bg{
+    background-color: $primary-color-black;
+    color: $primary-color-white;
 }
 
