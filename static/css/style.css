@@ -25,14 +25,10 @@ textarea {
 }
 .card-deck .card-body {
   color: #F5F5F5;
-  padding-top: 2em;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding: 1.5em 2em;
 }
 .card-deck .card-footer {
-  padding-bottom: 1.5em;
-  padding-left: 2rem;
-  padding: 2em;
+  padding: 1.5em 2em;
   border: 0px solid transparent;
 }
 
