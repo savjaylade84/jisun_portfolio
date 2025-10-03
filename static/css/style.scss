@@ -28,6 +28,9 @@ textarea{
         margin: 0.5em;
         width: 30rem;
     }
+    .card-title{
+        margin-bottom: 0;
+    }
     .card-body{
         color: #F5F5F5;
         padding: 1.5em 2em;
@@ -67,6 +70,12 @@ textarea{
     span{
         margin-right:0.4em;
     }
+}
+
+/* programming icon */
+.programming-icon{
+    background-color: transparent;
+    border: 0;
 }
 
 .button-text-center{
