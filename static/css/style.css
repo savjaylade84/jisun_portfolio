@@ -10,6 +10,11 @@
   -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
+/* top shadow in container */
+.top-shadow {
+  box-shadow: -1px -8px 14px 0px rgba(0, 0, 0, 0.3);
+}
+
 /*disable textarea resizing*/
 textarea {
   resize: none;
@@ -334,7 +339,7 @@ textarea {
 }
 
 #introduction {
-  padding-top: 22em;
+  padding-top: 21em;
 }
 
 /*background text logo*/
