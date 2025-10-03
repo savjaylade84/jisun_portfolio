@@ -3,7 +3,7 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
     $accent-color-purple: rgba(60, 12, 82, 0.9);
     $primary-color-white:whitesmoke;
     $primary-color-black: rgba(20, 20, 22,0.8);
-    $primary-color-blackish:#1F1D24;
+    $primary-color-blackish:#212529;
 
 *{
     font-family: 'Lato', sans-serif;    
@@ -340,7 +340,7 @@ textarea{
 }
 
 #introduction{
-    padding-top: 20em;
+    padding-top: 22em;
 }
 
 
@@ -429,7 +429,7 @@ footer{
     background: linear-gradient(0deg,rgba(174, 34, 195, 1) 0%, rgba(237, 57, 138, 1) 100%);
 }
 .black-bg{
-    background-color: #212529;
+    background-color: $primary-color-blackish;
     color: $primary-color-white;
 }
 
