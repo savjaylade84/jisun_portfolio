@@ -124,16 +124,16 @@
                 <div class="text-light top-margin-none bottom-margin-xsmall top-padding-none bottom-padding-none text-center text-lg-start">
                     {% for desc in information['About']['Description'] %}
                         <!-- about item -->
-                        <div class="about-list bottom-margin-xxsmall  align-items-center d-flex d-md-flex flex-md-row flex-column">
+                        <div class="about-list bottom-margin-xxsmall  align-items-center d-flex d-md-flex flex-lg-row flex-column">
 
                             <picture>
                                 <source srcset=" {{ url_for('static',filename=desc['img']) }} " type="image/svg+xml">
                                 <img src=" {{  url_for('static',filename=desc['img']) }} " class="img-fluid img-art " alt="...">
                             </picture>
 
-                            <div class="bottom-margin-none padding-vertical-small text-justify">
-                                <p class="fs-3 fw-bold text-capitalize">{{ desc['title'] }}</p>
-                                <p class="fs-5 lh-sm">{{ desc['desc'] }}</p>
+                            <div class="bottom-margin-none padding-vertical-small">
+                                <p class="fs-3 text-capitalize text-center">{{ desc['title'] }}</p>
+                                <p class="fs-5 lh-sm  text-justify">{{ desc['desc'] }}</p>
                             </div>
 
                         </div>
@@ -155,7 +155,7 @@
 
                         <div class="card-body">
 
-                            <h5 class="card-title fw-bold bottom-padding-xxsmall ">{{ project['Name'] }}</h5>
+                            <h5 class="card-title bottom-padding-xxsmall ">{{ project['Name'] }}</h5>
 
                             <div class="d-flex flex-row flex-wrap bottom-padding-xxsmall">
                                 {% for icon in project['img-icon'] %}
@@ -182,11 +182,11 @@
             <!-- connect text -->
             <div class="connect-text text-light top-margin-none bottom-margin-xsmall text-center top-padding-none bottom-padding-none text-lg-center">
 
-                <p class="display-5 bottom-margin-none connect-title">{{ information['connect-title'] }}</p>
+                <p class="display-6 bottom-margin-none connect-title">{{ information['connect-title'] }}</p>
 
                 <!-- connect description -->
                 {% for desc in information['connect-description'] %}
-                    <p class="fs-5">{{ desc['desc'] }}</p>
+                    <p class="fs-5 bottom-margin-none padding-vertical-xxsmall">{{ desc['desc'] }}</p>
                 {% endfor %}
 
                 <picture>
@@ -225,16 +225,16 @@
             <div class="container d-flex flex-lg-row flex-column">
 
                 <!-- contact information -->
-                <div class="container bottom-margin-xxsmall">
-                    <h5 class="text-uppercase fw-bold bottom-padding-none">Contact Information</h5>
+                <div class="container bottom-margin-xsmall">
+                    <h6 class="text-uppercase bottom-padding-none">Contact Information</h6>
                     <p class="bottom-margin-none"> {{ information['primary-email'] }}</p>
                     <p class="bottom-margin-none"> {{ information['secondary-email'] }}</p>
                     <p class="bottom-margin-none"> {{ information['phone-number'] }}</p>
                 </div>
 
                 <!-- social media icon -->
-                <div class="container bottom-margin-xxsmall">
-                    <h5 class="text-uppercase fw-bold bottom-padding-none">Social Media</h5>
+                <div class="container bottom-margin-xsmall">
+                    <h6 class="text-uppercase bottom-padding-none">Social Media</h6>
                     {% for icon in information['social_media_icon'] %}
                         <a href="{{ icon['Link'] }}" class=" align-items-center m-1 social-media-icon">
                             <span>
