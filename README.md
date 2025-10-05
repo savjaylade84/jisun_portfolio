@@ -74,7 +74,7 @@ For deployment instructions, see the [PythonAnywhere Flask deployment guide](htt
 
 ## License
 
-This project is for personal and educational use.  
+This project is my professional portfolio website.  
 Feel free to fork and adapt for your own portfolio.
 
 ---
