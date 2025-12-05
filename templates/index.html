@@ -57,7 +57,7 @@
             <div class=" container-fluid mx-auto">
 
                 <a class="navbar-brand fw-bold" href="#"> &nbsp;
-                    <img src="{{ url_for('static',filename=information['Logo']) }}" width="30" height="30" class="d-inline-block align-top" alt="">
+                    <img src="{{ url_for('static',filename=information['Logo']) }}" draggable="false" width="30" height="30" class="d-inline-block align-top" alt="">
                     &nbsp; JISUN
                 </a>
 
@@ -94,7 +94,7 @@
 
                 <picture>
                     <source srcset=" {{ url_for('static',filename=information['Author-Picture']) }} " fetchpriority="high" type="image/svg+xml">
-                    <img src=" {{ url_for('static',filename=information['Author-Picture']) }} " class="img-fluid me" alt="...">
+                    <img src=" {{ url_for('static',filename=information['Author-Picture']) }} " draggable="false" class="img-fluid me" alt="...">
                 </picture>
 
             </div>
@@ -107,9 +107,9 @@
 
                 <div class="social-media-buttons">
                     {% for icon in information['social_media_icon'] %}
-                        <a href="{{ icon['Link'] }}" class=" btn btn-md btn-dark align-items-center">
+                        <a href="{{ icon['Link'] }}" draggable="false" class=" btn btn-md btn-dark align-items-center">
                             <span>
-                                <img src="{{ url_for('static',filename=icon['Icon']) }}" class = "icon" width="16" height="16"/>
+                                <img src="{{ url_for('static',filename=icon['Icon']) }}" draggable="false" class = "icon" width="16" height="16"/>
                             </span>
                                <!-- &nbsp;{{ icon['Name'] }} -->
                         </a>
@@ -127,8 +127,8 @@
                         <div class="about-list bottom-margin-xxsmall  align-items-center d-flex d-md-flex flex-lg-row flex-column">
 
                             <picture>
-                                <source srcset=" {{ url_for('static',filename=desc['img']) }} " type="image/svg+xml">
-                                <img src=" {{  url_for('static',filename=desc['img']) }} " class="img-fluid img-art " alt="...">
+                                <source srcset=" {{ url_for('static',filename=desc['img']) }} " draggable="false" type="image/svg+xml">
+                                <img src=" {{  url_for('static',filename=desc['img']) }} " draggable="false" class="img-fluid img-art " alt="...">
                             </picture>
 
                             <div class="bottom-margin-none padding-vertical-small">
@@ -150,7 +150,7 @@
 
                         <picture>
                             <source srcset=" {{ url_for('static',filename=information['Default-Picture']) }} " type="image/svg+xml">
-                            <img src=" {{ url_for('static',filename=information['Default-Picture']) }} " class="card-img-top" alt="...">
+                            <img src=" {{ url_for('static',filename=information['Default-Picture']) }} " draggable="false" class="card-img-top" alt="...">
                         </picture>
 
                         <div class="card-body">
@@ -159,7 +159,7 @@
 
                             <div class="d-flex flex-row flex-wrap bottom-padding-xxsmall">
                                 {% for icon in project['img-icon'] %}
-                                    <img src="{{ url_for('static',filename=icon) }}" class = "programming-icon m-1" width="32" height="32"/>
+                                    <img src="{{ url_for('static',filename=icon) }}" class = "programming-icon m-1" draggable="false" width="32" height="32"/>
                                 {% endfor %}
                             </div>
 
@@ -168,7 +168,7 @@
                         </div>
 
                         <div class="card-footer">
-                            <a href=" {{ project['Link'] }} " class="btn button button-white">Visit Repository</a>
+                            <a href=" {{ project['Link'] }} " draggable="false" class="btn button button-white">Visit Repository</a>
                         </div>
 
                     </div>
@@ -191,7 +191,7 @@
 
                 <picture>
                     <source srcset=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " type="image/svg+xml">
-                    <img src=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " class="card-img-top img-art " alt="..." >
+                    <img src=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " draggable="false" class="card-img-top img-art " alt="..." >
                 </picture>
 
             </div>
@@ -214,7 +214,7 @@
                     <textarea class="form-control" id="message" name="message" placeholder="Message"></textarea>
                     <label for="message">Message</label>
                 </div>
-                    <button type="submit" class="w-100 btn button button-black button-text-center" rows="4" column="50">Let's Connect</button>
+                    <button type="submit" draggable="false" class="w-100 btn button button-black button-text-center" rows="4" column="50">Let's Connect</button>
             </form>
 
         </div>
@@ -236,9 +236,9 @@
                 <div class="container bottom-margin-xsmall">
                     <h6 class="text-uppercase bottom-padding-none">Social Media</h6>
                     {% for icon in information['social_media_icon'] %}
-                        <a href="{{ icon['Link'] }}" class=" align-items-center m-1 social-media-icon">
+                        <a href="{{ icon['Link'] }}" draggable="false" class=" align-items-center m-1 social-media-icon">
                             <span>
-                                <img src="{{ url_for('static',filename=icon['Icon']) }}" class = "icon" width="16" height="16"/>
+                                <img src="{{ url_for('static',filename=icon['Icon']) }}"  draggable="false" class = "icon" width="16" height="16"/>
                             </span>
                         </a>
                     {% endfor %}

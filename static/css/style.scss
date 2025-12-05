@@ -79,11 +79,17 @@ textarea{
     }
 }
 
+
+
 /* programming icon */
 .programming-icon{
-    background-color: transparent;
-    border: 0;
+    background-color: $primary-color-white;
+    padding: 0.1em;
+    width: 36px;
+    height: 36px;
+    border: solid $primary-color-white 0.15em;
 }
+
 
 .button-text-center{
     display: flex;
@@ -432,7 +438,12 @@ textarea{
 .profile-intro-container{
     padding: 3em 1.5em 2em 1.5em;
     color: $primary-color-blackish;
+}
 
+.profile-container{
+    picture{
+        filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.7));
+    }
 }
 
 /*footer*/

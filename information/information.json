@@ -38,6 +38,16 @@
         }
     ],
     "Project_List": [
+         {
+            "Name": "Green Day Fan Base Website",
+            "img-icon":[
+                "/img/programming_language_icon/html5.svg",
+                "/img/programming_language_icon/sass.svg",
+                "/img/programming_language_icon/javascript.svg"
+            ],
+            "Description":"My first Website created is a static fan-page website built with HTML, CSS and a touch of JavaScript. Created as a tribute to Green Day, it showcases their albums, discography and fan-content in a clean, responsive layout. This project highlights my ability to build from-scratch static websites, organize content, and apply core web fundamentals (semantic HTML, custom styling, basic JS) for a polished, fan-centric web experience.",
+            "Link": "https://github.com/savjaylade84/GreenDayFan.github.io"
+        },
         {
             "Name": "Flask Weather App",
             "img-icon":[
@@ -77,17 +87,6 @@
             ],
             "Description":"terminal-based Python application that helps you log and analyze your daily calorie intake. It records meals, tracks nutritional stats over time, and uses AI-driven analytics to provide insights into eating habits. The app also presents data visually through simple statistical charts, making it easier to understand and improve diet patterns.",
             "Link": "https://github.com/savjaylade84/calorie_tracker"
-        }, {
-            "Name": "Simple My Twitter Post",
-            "img-icon":[
-                "/img/programming_language_icon/python.svg",
-                "/img/programming_language_icon/flask.svg",
-                "/img/programming_language_icon/html5.svg",
-                "/img/programming_language_icon/bootstrap.svg",
-                "/img/programming_language_icon/tweepy.png"
-            ],
-            "Description":"simple web app built with Flask and Tweepy that lets you post and view Twitter feeds. It serves as a lightweight interface for interacting with the Twitter API, handling authentication and posting functionality, with frontend templates for display.",
-            "Link": "https://github.com/savjaylade84/MyTweeterFeed"
         }, {
             "Name": "My Facebook Page Post",
             "img-icon":[
