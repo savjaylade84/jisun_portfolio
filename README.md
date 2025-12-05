@@ -19,10 +19,11 @@ A personal portfolio website showcasing my projects, skills, and contact informa
 
 ## Tech Stack
 
-- **Backend:** Python, Flask
-- **Frontend:** HTML, CSS, JavaScript (Jinja2 templating)
-- **Email:** SMTP (Gmail) for contact form
-- **Hosting:** [PythonAnywhere](https://www.pythonanywhere.com/)
+- **Backend:** &nbsp;
+[![Python](https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org) &nbsp; [![Flask](https://img.shields.io/badge/-Flask-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com)  
+- **Frontend:**  &nbsp; [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML) &nbsp; [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS) &nbsp; [![JavaScript](https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) &nbsp; [![Jinja2](https://img.shields.io/badge/Jinja2-B41717?style=for-the-badge&logo=jinja&logoColor=white)](https://palletsprojects.com/p/jinja/)
+- **Email:**  &nbsp; [![SMTP](https://img.shields.io/badge/SMTP-007396?style=for-the-badge&logo=mail-dot-ru&logoColor=white)](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol)  
+- **Hosting:**  &nbsp; [![PythonAnywhere](https://img.shields.io/badge/PythonAnywhere-052F5F?style=for-the-badge&logo=python&logoColor=white)](https://www.pythonanywhere.com)
 
 ---
 
