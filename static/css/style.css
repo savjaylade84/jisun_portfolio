@@ -211,6 +211,10 @@ textarea {
   padding-bottom: 15em;
 }
 
+.right-margin-xsmall {
+  margin-right: 0.5em;
+}
+
 .top-margin-none {
   margin-top: 0px;
 }

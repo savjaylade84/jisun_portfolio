@@ -166,9 +166,18 @@
                             <p class="card-text text-justify text-wrap">{{ project['Description'] }}</p>
 
                         </div>
-
                         <div class="card-footer">
-                            <a href=" {{ project['Link'] }} " draggable="false" class="btn button button-white">Visit Repository</a>
+                            <a href=" {{ project['Link'] }} " draggable="false" class="btn button button-white right-margin-xsmall">Visit Repository</a>
+                            
+                            <!--
+                                 this validate if there's any website link on the repository
+                                 if there's then it will create a button for it for user to click and
+                                 visit that website
+                            -->
+                            {% if project['website-link'] %}
+                                <a href=" {{ project['website-link'] }} " draggable="false" class="btn button button-white">Visit Website</a>
+                            {% endif%}
+
                         </div>
 
                     </div>
