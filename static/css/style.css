@@ -73,11 +73,9 @@ textarea {
 
 /* programming icon */
 .programming-icon {
-  background-color: whitesmoke;
   padding: 0.1em;
   width: 36px;
   height: 36px;
-  border: solid whitesmoke 0.15em;
 }
 
 .button-text-center {
@@ -128,8 +126,8 @@ textarea {
 }
 
 .button-purple {
-  border: 0.242rem solid rgba(60, 12, 82, 0.9);
-  color: rgba(60, 12, 82, 0.9);
+  border: 0.242rem solid #a02082;
+  color: #a02082;
 }
 
 .button:active, .button:focus {

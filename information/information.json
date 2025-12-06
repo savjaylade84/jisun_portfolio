@@ -53,7 +53,7 @@
             "Name": "Flask Weather App",
             "img-icon":[
                 "/img/programming_language_icon/python.svg",
-                "/img/programming_language_icon/flask.svg",
+                "/img/programming_language_icon/flask_white.svg",
                 "/img/programming_language_icon/html5.svg",
                 "/img/programming_language_icon/bootstrap.svg",
                 "/img/programming_language_icon/json.svg"
@@ -61,7 +61,19 @@
             "Description":"Flask Weather App is a Python web application built with Flask that uses the OpenWeatherMap API to display current weather information for cities around the world. It supports typical Flask setup and routing, makes HTTP requests to fetch weather data, and renders results in front-end templates.",
             "Link": "https://github.com/savjaylade84/flask_weather_app",
             "website-link":"https://weatherflaskapp.onrender.com/"
-        }, {
+        },{
+            "Name": "My Facebook Page Post",
+            "img-icon":[
+                "/img/programming_language_icon/python.svg",
+                "/img/programming_language_icon/flask_white.svg",
+                "/img/programming_language_icon/html5.svg",
+                "/img/programming_language_icon/bootstrap.svg",
+                "/img/programming_language_icon/facebook.svg"
+            ],
+            "Description":"Flask-based Python application that integrates with the Facebook Graph API to allow posting directly to a Facebook Page. It handles user authentication, permissions, and posting workflows, letting you manage page content programmatically via a web interface.",
+            "Link": "https://github.com/savjaylade84/My_Facebook_Page_Post",
+            "website-link":"https://my-facebook-page-post.onrender.com/"
+        },{
             "Name": "Terminal Bank System",
             "img-icon":[
                 "/img/programming_language_icon/python.svg",
@@ -92,18 +104,6 @@
             "Description":"terminal-based Python application that helps you log and analyze your daily calorie intake. It records meals, tracks nutritional stats over time, and uses AI-driven analytics to provide insights into eating habits. The app also presents data visually through simple statistical charts, making it easier to understand and improve diet patterns.",
             "Link": "https://github.com/savjaylade84/calorie_tracker",
             "website-link":""
-        }, {
-            "Name": "My Facebook Page Post",
-            "img-icon":[
-                "/img/programming_language_icon/python.svg",
-                "/img/programming_language_icon/flask.svg",
-                "/img/programming_language_icon/html5.svg",
-                "/img/programming_language_icon/bootstrap.svg",
-                "/img/programming_language_icon/facebook.svg"
-            ],
-            "Description":"Flask-based Python application that integrates with the Facebook Graph API to allow posting directly to a Facebook Page. It handles user authentication, permissions, and posting workflows, letting you manage page content programmatically via a web interface.",
-            "Link": "https://github.com/savjaylade84/My_Facebook_Page_Post",
-            "website-link":"https://my-facebook-page-post.onrender.com/"
         }
     ],
     "Title": "Hello! I'm Jayson from Philippines",
