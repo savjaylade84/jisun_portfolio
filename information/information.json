@@ -106,23 +106,18 @@
             "website-link":""
         }
     ],
-    "Title": "Hello! I'm Jayson from Philippines",
-    "Sub-title": "Software Developer & Website Designer",
+    "Title": "Developer & Designer",
+    "Sub-title": "Designing smart. Developing clean. Delivering impact.",
     "About": {
-        "Title": "About Myself",
         "Description":[
                 {   
-                    "title":"My Passion On Coding",
+                    "title":"Passion On Coding",
                     "img":"/img/Programmer-rafiki.png",
-                    "desc":"I’ve always been passionate about coding and technology, and what excites me most is the ability to take an idea and actually bring it to life. For me, coding isn’t just about writing programs, it’s about solving problems, finding smarter ways to do things, and creating something meaningful from scratch. I spend a lot of time working with Python, and I love how versatile it is. Whether it’s building small tools, automating tasks, or working on bigger projects, I enjoy the challenge of turning complex problems into clean, efficient solutions."
+                    "desc":"I’ve always been passionate about coding and technology because I enjoy turning ideas into meaningful solutions, solving problems creatively, and using Python’s versatility to build tools, automate tasks, and develop efficient solutions for complex challenges."
                 },{   
-                    "title":"My Passion On Design",
+                    "title":"Passion On Design",
                     "img":"/img/Design thinking-rafiki.png",
-                    "desc":"But my interests go beyond just coding. I have a strong creative side, and that shows up in my design work. I enjoy working on graphics, from simple logos and illustrations to polished landing pages. Design is a space where I get to play with colors, layouts, and ideas, and I love how it allows me to make projects feel more alive and personal. I also have experience in web design, which really brings everything together. Being able to combine coding with design helps me create websites that are not only functional but also visually appealing and easy to use."
-                },{   
-                    "title":"And Lastly",
-                    "img":"/img/Coding-bro.png",
-                    "desc":"At the end of the day, what I enjoy most is blending creativity with technology. I like building things that look good, work well, and leave a lasting impression on the people who use them. That balance between problem-solving and creativity is what keeps me motivated and makes me excited about every new project I take on."
+                    "desc":"Beyond coding, I also have a strong creative side that shines through in my graphic and web design work, where I enjoy creating everything from simple logos and illustrations to polished landing pages by combining colors, layouts, and ideas to build websites that are both functional and visually appealing."
                 }
         ]
     },

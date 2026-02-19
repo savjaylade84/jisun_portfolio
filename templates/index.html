@@ -2,263 +2,36 @@
 <html lang="en" >
 	<head>
 
-            <!-- SEO Optimization -->
-    
-            <!-- icon logo on the tab of the browsers -->
-			<link rel="icon" href="{{ url_for('static',filename=information['Logo']) }}" type="image/icon type">
-
-            <!-- title on the tab of the browser -->
-            <title>{{information['Author']}} - {{information['seo-title']}}</title>
-
-            <!-- author information -->
-            <meta name="author" content="{{information['Author']}}">
-
-			<!-- Primary Meta Tags -->
-			<title>{{information['Author']}} - Software Developer</title>
-			<meta name="title" content="{{information['Author']}} - {{information['seo-title']}}">
-			<meta name="description" content="{{information['seo-description']}}">
-
-			<!-- Open Graph / Facebook -->
-			<meta property="og:type" content="website">
-			<meta property="og:url" content="{{information['Website']}}">
-			<meta property="og:title" content="{{information['Author']}} - {{information['seo-title']}}">
-			<meta property="og:description" content="{{information['seo-description']}}">
-			<meta property="og:image" content="{{information['Author-Pixel-Picture']}}">
-
-			<!-- Twitter -->
-			<meta property="twitter:card" content="summary_large_image">
-            <meta name="twitter:site" content="@johnjaysonbdel1">
-			<meta property="twitter:url" content="{{information['Twitter']}}">
-			<meta property="twitter:title" content="{{information['Author']}} - {{information['seo-title']}}">
-			<meta property="twitter:description" content="{{information['seo-description']}}">
-			<meta property="twitter:image" content="{{information['Author-Pixel-Picture']}}">
-        
-            <!-- website config on the browser -->
-			<meta name="viewport" content="width=device-width,initial-scale=1">
-			<meta name="robots" content="index,follow">
-			<meta charset="utf-8" lang="en">
-
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-            
-            <!-- lato font style -->
-            <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-
-            <!-- roboto font style -->
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        {# seo meta tags for facebook, x, and google search engine optimization #}
+        {% with title_page=information['seo-title'],page_description=information['seo-description'] %}
+            {% include 'seo.html' %}
+        {% endwith %}
 
 	</head>
 
     <body>
 
-        <!-- navigation section -->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-            <div class=" container-fluid mx-auto">
+        {# nagivation bar section #}
+        {% include 'navigation.html' %}
 
-                <a class="navbar-brand fw-bold" href="#"> &nbsp;
-                    <img src="{{ url_for('static',filename=information['Logo']) }}" draggable="false" width="30" height="30" class="d-inline-block align-top" alt="">
-                    &nbsp; JISUN
-                </a>
+        {# hero or introduction section #}
+        {% include 'introduction.html' %}
 
-                <!-- mobile menu button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
+        {# about page is imported in a about.html file  #}
+        {% include 'about.html' %}
 
-                <!-- menu items -->
-                <div class="collapse justify-content-center text-center navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active fs-5" aria-current="page" href="#introduction">Home</a>
-                        </li>
-                        <li class="nav-item fs-5">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item fs-5">
-                            <a class="nav-link" href="#projects">Projects</a>
-                        </li>
-                        <li class="nav-item fs-5">
-                            <a class="nav-link" href="#connect">Contact</a>
-                        </li>
-                    </ul>
-                </div>
+        {#  project #} 
+        {% include 'project.html' %}
 
-            </div>
-        </nav>
+        {#  connect section #} 
+        {% include 'connect.html' %}
 
-        <!-- hero or introduction section -->
-        <div class="introduction  container-sm top-padding-large d-flex d-lg-flex flex-lg-row flex-column-reverse justify-content-center align-items-center" id="introduction">
-            <!-- profile picture -->
-            <div class="profile-container">
-
-                <picture>
-                    <source srcset=" {{ url_for('static',filename=information['Author-Picture']) }} " fetchpriority="high" type="image/svg+xml">
-                    <img src=" {{ url_for('static',filename=information['Author-Picture']) }} " draggable="false" class="img-fluid me" alt="...">
-                </picture>
-
-            </div>
-            <!-- profile intro -->
-            <div class="profile-intro-container fw-bolder text-center text-uppercase">
-
-                <div class="bottom-padding-xsmall">
-                    <p class="h2 bottom-margin-none ">{{ information['Sub-title'] }}</p>
-                </div>
-
-                <div class="social-media-buttons">
-                    {% for icon in information['social_media_icon'] %}
-                        <a href="{{ icon['Link'] }}" target="_blank" draggable="false" class=" btn btn-md btn-dark align-items-center">
-                            <span>
-                                <img src="{{ url_for('static',filename=icon['Icon']) }}" draggable="false" class = "icon" width="16" height="16"/>
-                            </span>
-                               <!-- &nbsp;{{ icon['Name'] }} -->
-                        </a>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-
-        <!-- about section -->
-        <div class="purple-hue-bg top-padding-medium bottom-padding-medium top-shadow" id="about">
-            <div class="container top-margin-none top-padding-none">
-                <div class="text-light top-margin-none bottom-margin-xsmall top-padding-none bottom-padding-none text-center text-lg-start">
-                    {% for desc in information['About']['Description'] %}
-                        <!-- about item -->
-                        <div class="about-list bottom-margin-xxsmall  align-items-center d-flex d-md-flex flex-lg-row flex-column">
-
-                            <picture>
-                                <source srcset=" {{ url_for('static',filename=desc['img']) }} " draggable="false" type="image/svg+xml">
-                                <img src=" {{  url_for('static',filename=desc['img']) }} " draggable="false" class="img-fluid img-art " alt="...">
-                            </picture>
-
-                            <div class="bottom-margin-none padding-vertical-small">
-                                <p class="fs-3 text-capitalize text-center">{{ desc['title'] }}</p>
-                                <p class="fs-5 lh-sm  text-justify">{{ desc['desc'] }}</p>
-                            </div>
-
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-
-        <!-- project -->
-        <div class="card-deck top-padding-medium bottom-padding-medium d-flex justify-content-center flex-wrap" id="projects">
-            {% for project in information['Project_List'] %}
-                    <!-- project item -->
-                    <div class="card m-2 purple-hue-bg">
-
-                        <picture>
-                            <source srcset=" {{ url_for('static',filename=information['Default-Picture']) }} " type="image/svg+xml">
-                            <img src=" {{ url_for('static',filename=information['Default-Picture']) }} " draggable="false" class="card-img-top" alt="...">
-                        </picture>
-
-                        <div class="card-body">
-
-                            <h5 class="card-title bottom-padding-xxsmall ">{{ project['Name'] }}</h5>
-
-                            <div class="d-flex flex-row flex-wrap bottom-padding-xxsmall">
-                                {% for icon in project['img-icon'] %}
-                                    <img src="{{ url_for('static',filename=icon) }}" class = "programming-icon m-1" draggable="false" width="32" height="32"/>
-                                {% endfor %}
-                            </div>
-
-                            <p class="card-text text-justify text-wrap">{{ project['Description'] }}</p>
-
-                        </div>
-                        <div class="card-footer">
-                            <a href=" {{ project['Link'] }} " target="_blank" draggable="false" class="btn button button-white right-margin-xsmall">Visit Repository</a>
-                            
-                            <!--
-                                 this validate if there's any website link on the repository
-                                 if there's then it will create a button for it for user to click and
-                                 visit that website
-                            -->
-                            {% if project['website-link'] %}
-                                <a href=" {{ project['website-link'] }} " target="_blank" draggable="false" class="btn button button-white">Visit Website</a>
-                            {% endif%}
-
-                        </div>
-
-                    </div>
-            {% endfor %}
-        </div>
-
-
-        <!-- connect section -->
-        <div class="purple-hue-bg top-padding-medium bottom-padding-small d-flex flex-lg-row flex-column justify-content-center align-items-center" id="connect">
-            
-            <!-- connect text -->
-            <div class="connect-text text-light top-margin-none bottom-margin-xsmall text-center top-padding-none bottom-padding-none text-lg-center">
-
-                <p class="display-6 bottom-margin-none connect-title">{{ information['connect-title'] }}</p>
-
-                <!-- connect description -->
-                {% for desc in information['connect-description'] %}
-                    <p class="fs-5 bottom-margin-none padding-vertical-xxsmall">{{ desc['desc'] }}</p>
-                {% endfor %}
-
-                <picture>
-                    <source srcset=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " type="image/svg+xml">
-                    <img src=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " draggable="false" class="card-img-top img-art " alt="..." >
-                </picture>
-
-            </div>
-
-            <!-- connect form -->
-            <form class=" border d-flex justify-content-evenly align-items-stretch bottom-margin-small flex-column bg-light" action="/send_email" method="POST">
-                <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="email">
-                    <label for="email">Email</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="fullname">
-                    <label for="name">Name</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
-                    <label for="subject">Subject</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <textarea class="form-control" id="message" name="message" placeholder="Message"></textarea>
-                    <label for="message">Message</label>
-                </div>
-                    <button type="submit" draggable="false" class="w-100 btn button button-black button-text-center" rows="4" column="50">Let's Connect</button>
-            </form>
-
-        </div>
-
-        <!-- footer section -->
-        <footer class="text-lg-start text-light top-padding-small bottom-padding-xsmall padding-vertical-small black-bg " id="footer">
-            <!-- contact information and social media icon -->
-            <div class="container d-flex flex-lg-row flex-column">
-
-                <!-- contact information -->
-                <div class="container bottom-margin-xsmall">
-                    <h6 class="text-uppercase bottom-padding-none">Contact Information</h6>
-                    <p class="bottom-margin-none"> {{ information['primary-email'] }}</p>
-                    <p class="bottom-margin-none"> {{ information['secondary-email'] }}</p>
-                    <p class="bottom-margin-none"> {{ information['phone-number'] }}</p>
-                </div>
-
-                <!-- social media icon -->
-                <div class="container bottom-margin-xsmall">
-                    <h6 class="text-uppercase bottom-padding-none">Social Media</h6>
-                    {% for icon in information['social_media_icon'] %}
-                        <a href="{{ icon['Link'] }}" draggable="false" class=" align-items-center m-1 social-media-icon">
-                            <span>
-                                <img src="{{ url_for('static',filename=icon['Icon']) }}"  draggable="false" class = "icon" width="16" height="16"/>
-                            </span>
-                        </a>
-                    {% endfor %}
-                </div>
-
-            </div>
-            
-        </footer>
+        {#  footer section #} 
+        {% include 'footer.html' %}
 
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
     </body>
 </html>

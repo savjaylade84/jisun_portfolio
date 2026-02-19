@@ -1,0 +1,45 @@
+{% block connect %}
+
+    <div class="purple-hue-bg top-padding-medium bottom-padding-small d-flex flex-lg-row flex-column justify-content-center align-items-center" id="connect">
+            
+        {#  connect text #} 
+        <div class="connect-text text-light top-margin-none bottom-margin-xsmall text-center top-padding-none bottom-padding-none text-lg-center">
+
+            <p class="display-6 bottom-margin-none connect-title">{{ information['connect-title'] }}</p>
+
+            {#  connect description #} 
+            {% for desc in information['connect-description'] %}
+                <p class="fs-5 bottom-margin-none padding-vertical-xxsmall">{{ desc['desc'] }}</p>
+            {% endfor %}
+
+            <picture>
+                <source srcset=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " type="image/svg+xml">
+                <img src=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " draggable="false" class="card-img-top img-art " alt="..." >
+            </picture>
+
+        </div>
+
+        {#  connect form #} 
+        <form class=" border d-flex justify-content-evenly align-items-stretch bottom-margin-small flex-column bg-light" action="/send_email" method="POST">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="email">
+                <label for="email">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="name" name="name" placeholder="fullname">
+                <label for="name">Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
+                <label for="subject">Subject</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" id="message" name="message" placeholder="Message"></textarea>
+                <label for="message">Message</label>
+            </div>
+                <button type="submit" draggable="false" class="w-100 btn button button-black button-text-center" rows="4" column="50">Let's Connect</button>
+        </form>
+
+    </div>
+
+{% endblock %}

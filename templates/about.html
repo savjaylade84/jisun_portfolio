@@ -1,0 +1,27 @@
+{% block content %}
+
+    <div class="purple-hue-bg top-padding-medium bottom-padding-small top-shadow" id="about">
+        <div class="container top-margin-none top-padding-none">
+                
+            <div class="text-light top-margin-none bottom-margin-xsmall top-padding-none bottom-padding-none text-center text-lg-start">
+                {% for desc in information['About']['Description'] %}
+                    <!-- about item -->
+                    <div class="about-list bottom-margin-xxsmall  align-items-center d-flex d-md-flex flex-lg-row flex-column">
+
+                        <picture>
+                            <source srcset=" {{ url_for('static',filename=desc['img']) }} " draggable="false" type="image/svg+xml">
+                            <img src=" {{  url_for('static',filename=desc['img']) }} " draggable="false" class="img-fluid img-art " alt="...">
+                        </picture>
+
+                        <div class="bottom-margin-none padding-vertical-small">
+                            <p class="fs-3 text-capitalize text-center">{{ desc['title'] }}</p>
+                            <p class="fs-4 lh-sm  text-justify">{{ desc['desc'] }}</p>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

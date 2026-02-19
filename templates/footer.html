@@ -1,0 +1,31 @@
+{% block content %}
+
+    <footer class="text-lg-start text-light top-margin-none top-padding-small bottom-padding-xsmall padding-vertical-small black-bg " id="footer">
+        {#  contact information and social media icon #} 
+        <div class="container d-flex flex-lg-row flex-column">
+
+            {#  contact information #} 
+            <div class="container bottom-margin-xsmall">
+                <p class="fs-5 text-uppercase bottom-padding-none">Contact Information</p>
+                <p class="fs-5 bottom-margin-none"> {{ information['primary-email'] }}</p>
+                <p class="fs-5 bottom-margin-none"> {{ information['secondary-email'] }}</p>
+                <p class="fs-5 bottom-margin-none"> {{ information['phone-number'] }}</p>
+            </div>
+
+            {#  social media icon #} 
+            <div class="container bottom-margin-xsmall">
+                <p class="fs-5 text-uppercase bottom-padding-none">Social Media</p>
+                {% for icon in information['social_media_icon'] %}
+                    <a href="{{ icon['Link'] }}" draggable="false" class=" align-items-center m-1 social-media-icon">
+                        <span>
+                            <img src="{{ url_for('static',filename=icon['Icon']) }}"  draggable="false" class = "icon" width="16" height="16"/>
+                        </span>
+                    </a>
+                {% endfor %}
+            </div>
+
+        </div>
+            
+    </footer>
+
+{% endblock %}

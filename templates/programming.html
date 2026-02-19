@@ -1,0 +1,26 @@
+{% block content %}
+
+<div id="programmingLogoCarousel" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Carousel Items -->
+  <div class="carousel-inner">
+    {% for idx, logo in enumerate(programming_logos) %}
+      <div class="carousel-item {% if idx == 0 %}active{% endif %}">
+        <img src="{{ url_for('static', filename=logo) }}" class="d-block w-100" alt="Programming Logo {{ idx + 1 }}">
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Carousel Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#programmingLogoCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#programmingLogoCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+{% endblock %}
