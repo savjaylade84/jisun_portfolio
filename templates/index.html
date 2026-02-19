@@ -107,7 +107,7 @@
 
                 <div class="social-media-buttons">
                     {% for icon in information['social_media_icon'] %}
-                        <a href="{{ icon['Link'] }}" draggable="false" class=" btn btn-md btn-dark align-items-center">
+                        <a href="{{ icon['Link'] }}" target="_blank" draggable="false" class=" btn btn-md btn-dark align-items-center">
                             <span>
                                 <img src="{{ url_for('static',filename=icon['Icon']) }}" draggable="false" class = "icon" width="16" height="16"/>
                             </span>
@@ -167,7 +167,7 @@
 
                         </div>
                         <div class="card-footer">
-                            <a href=" {{ project['Link'] }} " draggable="false" class="btn button button-white right-margin-xsmall">Visit Repository</a>
+                            <a href=" {{ project['Link'] }} " target="_blank" draggable="false" class="btn button button-white right-margin-xsmall">Visit Repository</a>
                             
                             <!--
                                  this validate if there's any website link on the repository
@@ -175,7 +175,7 @@
                                  visit that website
                             -->
                             {% if project['website-link'] %}
-                                <a href=" {{ project['website-link'] }} " draggable="false" class="btn button button-white">Visit Website</a>
+                                <a href=" {{ project['website-link'] }} " target="_blank" draggable="false" class="btn button button-white">Visit Website</a>
                             {% endif%}
 
                         </div>
