@@ -35,12 +35,18 @@ A personal portfolio website showcasing my projects, skills, and contact informa
     cd jisun_portfolio
     ```
 
-2. **Install dependencies:**
+2. **Create a enviroment and activate it**
+    ```bash
+    python3 -m venv .venv
+    source .venv/bin/activate
+   ```
+
+3. **Install dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
-
-3. **Set up environment variables:**  
+    
+4. **Set up environment variables:**  
    Create a `.env` file in the project root with your email credentials:
     ```
     MAIL_SERVER=smtp.gmail.com
@@ -56,12 +62,12 @@ A personal portfolio website showcasing my projects, skills, and contact informa
     MAIL_SUPPRESS_SEND=false
     ```
 
-4. **Run the app locally:**
+5. **Run the app locally:**
     ```bash
-    python app.py
+    flask run
     ```
 
-5. **Visit:**  
+6. **Visit:**  
    Open [http://localhost:5000](http://localhost:5000) in your browser.
 
 ---
