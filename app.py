@@ -7,10 +7,12 @@ import os
 import ssl
 import smtplib
 
-app = Flask(__name__)
-load_dotenv()
-information:dict = {}
+app = Flask(__name__)       # create flask app
 
+load_dotenv()               # load enviroment
+information:dict = {}       # store configuration setting on json file
+
+# configuration setting for sending email
 app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER')
 app.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT'))
 app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
@@ -27,13 +29,23 @@ app.config['MAIL_SUPPRESS_SEND'] = os.environ.get('MAIL_SUPPRESS_SEND')
 
 #mail = Mail(app)
 
-
+# load the configuration and information data from json file 
 def load_information() -> dict:
     with open("information/information.json",'r') as file:
         return json.load(file)
     
     return {}
 
+# page and route for any kind of error that will occur
+@app.route('/error',methods=['GET'])
+def error(message:str ="",description:str = ""):
+    m = request.args.get('message',message)             # temporary storage for message
+    d = request.args.get('description',description)     # temporary storage for description
+    error = {"message":m,"description":d}               # create error dictionary
+    information = load_information()                    # load information from json file
+    return render_template('404.html',
+                           information = information, 
+                           error=error)
     
 @app.route('/send_email', methods=['POST'])
 def send_email():
@@ -42,6 +54,8 @@ def send_email():
     context = ssl.create_default_context()
 
     # get form data from request object
+    # store data from config that will use
+    # to send email later
     name = request.form.get('name', 'No Name')
     email = request.form.get('email', 'No Email')
     subject = f"New Message(Portfolio) from {email} | Subject: {request.form.get('subject', 'No Subject')}"
@@ -57,20 +71,26 @@ def send_email():
     email_message.set_content(body)
 
     try:
+        # try to login to google account and send email
+        # then redirect to the home page
         with smtplib.SMTP_SSL(app.config['MAIL_SERVER'], app.config['MAIL_PORT'], context=context) as server:
             server.login(app.config['MAIL_USERNAME'], app.config['MAIL_PASSWORD'])
             server.send_message(email_message)
         return redirect(url_for('index'))
     except Exception as e:
-        print(f"Error sending email: {e}")
-        return "Failed to send email", 500
+        # if failed to send email it
+        # redirect to the 404 page
+        return redirect(url_for('error',
+                                message="Oops! Email Didn’t Take Off",
+                                description="Email failed (Error 500). Please try again later or contact support."))
 
-
+# main page route
 @app.route("/", methods = ['GET','POST'])
 def index():
     information = load_information()
-    return render_template('index.html',information = information)
+    return render_template('index.html',
+                           information = information)
 
 
 if __name__ == '__main__':
-        app.run(debug=True)
+        app.run(debug=False)

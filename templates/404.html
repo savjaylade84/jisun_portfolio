@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+
+        {# seo meta tags for facebook, x, and google search engine optimization #}
+        {% with title_page=information['seo-title'],page_description=information['seo-description'] %}
+            {% include 'seo.html' %}
+        {% endwith %}
+
+	</head>
+    <body>  
+        {# nagivation bar section #}
+        {% include 'navigation.html' %}
+
+        {# section for content on errors #}
+        <section class="error-content bottom-margin-small top-margin-small top-padding-small bottom-padding-small text-center">
+            <img src="{{ url_for('static',filename=information['error-img']) }}" alt="Error">
+            <h2>{{ error['message'] or "Page Not Found"}}</h2>
+            <h4 class="bottom-margin-xsmall">{{ error['description'] or "Oops! The page you’re looking for doesn’t exist." }}</h4>
+            <a href="/#introduction" draggable="false" class="btn button button-white">Go Home</a>
+        </section>
+
+        {#  footer section #} 
+        {% include 'footer.html' %}
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+            
+    </body>
+</html>
