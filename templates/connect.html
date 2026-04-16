@@ -13,8 +13,8 @@
             {% endfor %}
 
             <picture>
-                <source srcset=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " type="image/svg+xml">
-                <img src=" {{ url_for('static',filename=information['Let-Connect-Image']) }} " draggable="false" class="card-img-top img-art " alt="..." >
+                <source srcset=" {{ url_for('static',filename=information['Let-Connect-Image']) | default(information['default-img']) }} " type="image/svg+xml">
+                <img src=" {{ url_for('static',filename=information['Let-Connect-Image']) | default(information['default-img']) }} " draggable="false" class="card-img-top img-art " alt="..." >
             </picture>
 
         </div>
@@ -34,7 +34,7 @@
                 <label for="subject">Subject</label>
             </div>
             <div class="form-floating mb-3">
-                <textarea class="form-control" id="message" name="message" placeholder="Message"></textarea>
+                <textarea class="form-control" id="message" name="message"  placeholder="Message"></textarea>
                 <label for="message">Message</label>
             </div>
                 <button type="submit" draggable="false" class="w-100 btn button button-black button-text-center" rows="4" column="50">Let's Connect</button>

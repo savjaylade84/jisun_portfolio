@@ -4,7 +4,7 @@
         <div class=" container-fluid mx-auto">
 
             <a class="navbar-brand fw-bold" href="#"> &nbsp;
-                <img src="{{ url_for('static',filename=information['Logo']) }}" draggable="false" width="30" height="30" class="d-inline-block align-top" alt="">
+                <img src="{{ url_for('static',filename=information['Logo']) | default(information['default-img']) }}" draggable="false" width="30" height="30" class="d-inline-block align-top" alt="">
                 &nbsp; JISUN
             </a>
 

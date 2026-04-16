@@ -14,7 +14,7 @@
 
         {# section for content on errors #}
         <section class="error-content bottom-margin-small top-margin-small top-padding-small bottom-padding-small text-center">
-            <img src="{{ url_for('static',filename=information['error-img']) }}" alt="Error">
+            <img src="{{ url_for('static',filename=information['error-img']) | default(information['default-img']) }}" alt="Error">
             <h2>{{ error['message'] or "Page Not Found"}}</h2>
             <h4 class="bottom-margin-xsmall">{{ error['description'] or "Oops! The page you’re looking for doesn’t exist." }}</h4>
             <a href="/#introduction" draggable="false" class="btn button button-white">Go Home</a>

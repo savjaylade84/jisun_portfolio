@@ -6,8 +6,8 @@
                 <div class="card m-2 purple-hue-bg">
 
                     <picture>
-                        <source srcset=" {{ url_for('static',filename=information['Default-Picture']) }} " type="image/svg+xml">
-                        <img src=" {{ url_for('static',filename=information['Default-Picture']) }} " draggable="false" class="card-img-top" alt="...">
+                        <source srcset=" {{ url_for('static',filename=information['Default-Picture']) | default(information['default-img']) }} " type="image/svg+xml">
+                        <img src=" {{ url_for('static',filename=information['Default-Picture']) | default(information['default-img']) }} " draggable="false" class="card-img-top" alt="...">
                     </picture>
 
                     <div class="card-body">
@@ -16,7 +16,7 @@
 
                         <div class="d-flex flex-row flex-wrap bottom-padding-xxsmall">
                             {% for icon in project['img-icon'] %}
-                                <img src="{{ url_for('static',filename=icon) }}" class = "programming-icon m-1" draggable="false" width="32" height="32"/>
+                                <img src="{{ url_for('static',filename=icon) | default(information['default-img']) }}" class = "programming-icon m-1" draggable="false" width="32" height="32"/>
                             {% endfor %}
                         </div>
 
@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="card-footer">
-                        <a href=" {{ project['Link'] }} " target="_blank" draggable="false" class="btn button button-white right-margin-xsmall">Visit Repository</a>
+                        <a href=" {{ project['Link'] | default('/error') }} " target="_blank" draggable="false" class="btn button button-white right-margin-xsmall">Visit Repository</a>
                             
                         {# 
                              this validate if there's any website link on the repository
@@ -33,7 +33,7 @@
                              visit that website
                         #} 
                         {% if project['website-link'] %}
-                            <a href=" {{ project['website-link'] }} " target="_blank" draggable="false" class="btn button button-white">Visit Website</a>
+                            <a href=" {{ project['website-link'] | default('/error') }} " target="_blank" draggable="false" class="btn button button-white">Visit Website</a>
                         {% endif%}
 
                     </div>

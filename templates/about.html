@@ -9,8 +9,8 @@
                     <div class="about-list bottom-margin-xxsmall  align-items-center d-flex d-md-flex flex-lg-row flex-column">
 
                         <picture>
-                            <source srcset=" {{ url_for('static',filename=desc['img']) }} " draggable="false" type="image/svg+xml">
-                            <img src=" {{  url_for('static',filename=desc['img']) }} " draggable="false" class="img-fluid img-art " alt="...">
+                            <source srcset=" {{ url_for('static',filename=desc['img']) | default(information['default-img']) }} " draggable="false" type="image/svg+xml">
+                            <img src=" {{  url_for('static',filename=desc['img']) | default(information['default-img']) }} " draggable="false" class="img-fluid img-art " alt="...">
                         </picture>
 
                         <div class="bottom-margin-none padding-vertical-small">
