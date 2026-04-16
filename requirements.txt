@@ -30,5 +30,5 @@ rsa==4.9.1
 uritemplate==4.2.0
 urllib3==2.6.3
 uvicorn==0.35.0
-Werkzeug==3.1.4
+Werkzeug==3.1.6
 WTForms==3.2.1
