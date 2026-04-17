@@ -25,18 +25,25 @@
 			<meta property="og:image" content="{{information['Author-Pixel-Picture']  | default(information['default-img'])}}">
 
 			<!-- Twitter -->
-			<meta property="twitter:card" content="summary_large_image">
+			<meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:site" content="@johnjaysonbdel1">
-			<meta property="twitter:url" content="{{information['Twitter']}}">
-			<meta property="twitter:title" content="{{information['Author']}} - {{information['seo-title']}}">
-			<meta property="twitter:description" content="{{information['seo-description']}}">
-			<meta property="twitter:image" content="{{information['Author-Pixel-Picture'] | default(information['default-img'])}}">
+			<meta name="twitter:url" content="{{information['Twitter']}}">
+			<meta name="twitter:title" content="{{information['Author']}} - {{information['seo-title']}}">
+			<meta name="twitter:description" content="{{information['seo-description']}}">
+			<meta name="twitter:image" content="{{information['Author-Pixel-Picture'] | default(information['default-img'])}}">
         
+			<!-- Google Keyword Search | it may not work for search engine that disable this -->
+			<meta name="keywords" content="{{information['Author']}}, Software Developer, Web Developer, Programmer, Python Developer">
+			<meta name="keywords" content="John, john">
+			<meta name="keywords" content="Jayson, jayson">
+			<meta name="keywords" content="De leon, Deleon, de leon, deleon"> 
+
             <!-- website config on the browser -->
 			<meta name="viewport" content="width=device-width,initial-scale=1">
 			<meta name="robots" content="index,follow">
 			<meta charset="utf-8" lang="en">
 
+			<!-- bootstrap -->
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
             
             <!-- lato font style -->
@@ -48,3 +55,4 @@
             <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 {% endblock %}
+
