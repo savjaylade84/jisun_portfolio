@@ -16,7 +16,7 @@
 
                         <div class="d-flex flex-row flex-wrap bottom-padding-xxsmall">
                             {% for icon in project['img-icon'] %}
-                                <img src="{{ url_for('static',filename=icon) | default(information['default-img']) }}" class = "programming-icon m-1" draggable="false" width="32" height="32"/>
+                                <img src="{{ url_for('static',filename=icon) | default(information['default-img']) }}" alt="{{ project['img-alt'][loop.index0] }}" class = "programming-icon m-1" draggable="false" width="32" height="32"/>
                             {% endfor %}
                         </div>
 
