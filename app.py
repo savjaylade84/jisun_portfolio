@@ -12,7 +12,7 @@ import os
 import ssl
 import smtplib
 
-def set_logging() -> RotatingFileHandler:
+def set_logging(app):
     
     DIR:str = 'logs'
     MAX_BYTES:int = 1024 * 1024
@@ -23,19 +23,22 @@ def set_logging() -> RotatingFileHandler:
     
     log_file_path = os.path.join(DIR, 'app.log')
     
-    file_handler:RotatingFileHandler = RotatingFileHandler(log_file_path,MAX_BYTES,BACKUP_COUNT)
-    file_handler.setFormatter(logging.Formatter(
-                                        '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
+    file_handler:RotatingFileHandler = RotatingFileHandler(
+            log_file_path,
+            MAX_BYTES,
+            BACKUP_COUNT
+    )
     
-    file_handler.setLevel(logging.INFO)
-    
-    return file_handler
-    
+    # formatter
+    formatter = logging.Formatter(
+            'Time: [%(asctime)s] | Message: %(message)s'
+            )
+    file_handler.setFormatter(formatter)
 
-app = Flask(__name__)       # create flask app
-
-load_dotenv()               # load enviroment
-information:dict = {}       # store configuration setting on json file
+    # set application logging config
+    file_handler.setLevel(logging.WARNING)
+    app.logger.addHandler(file_handler)
+    app.logger.setLevel(logging.WARNING)
 
 # validator for the fields in 
 # in the form in the page
@@ -45,9 +48,11 @@ class FORM(FlaskForm):
     subject:StringField = StringField("Subject", validators=[DataRequired()])
     message:TextAreaField = TextAreaField("Message", validators=[DataRequired()])
 
-# set application logging config
-app.logger.addHandler(set_logging())
-app.logger.setLevel(logging.INFO)
+app = Flask(__name__)       # create flask app
+
+load_dotenv()               # load enviroment
+information:dict = {}       # store configuration setting on json file
+set_logging(app=app)            # set logging for application
 
 # configuration setting for sending email
 
@@ -93,6 +98,7 @@ def error(message:str ="",description:str = ""):
     error = {"message":m,"description":d}               # create error dictionary
     information = load_information()                    # load information from json file
     
+    app.logger.warning(f"{ error }")
     return render_template('404.html',
                            information = information, 
                            error=error)
@@ -110,14 +116,13 @@ def can_send_email(message:EmailMessage) -> bool:
         with smtplib.SMTP_SSL(current_app.config['MAIL_SERVER'], current_app.config['MAIL_PORT'], context=context) as server:
             server.login(current_app.config['MAIL_USERNAME'], current_app.config['MAIL_PASSWORD'])
             server.send_message(message)
+        app.logger.warning("Success Sending Email")
         
-        app.logger.info("Success on sending Email")    
-        return True
-
     except Exception as e:
-        app.logger.info(f"{ str(e) }")
+        app.logger.warning("%s",str(e))
+        return False
     
-    return False
+    return True
     
 
 # set the email config that needed for sending
