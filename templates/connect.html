@@ -12,6 +12,7 @@
                 <p class="fs-5 bottom-margin-none padding-vertical-xxsmall">{{ desc['desc'] }}</p>
             {% endfor %}
 
+            {# picture that correlated to the connect section #}
             <picture>
                 <source srcset=" {{ url_for('static',filename=information['Let-Connect-Image']) | default(information['default-img']) }} " type="image/svg+xml">
                 <img src=" {{ url_for('static',filename=information['Let-Connect-Image']) | default(information['default-img']) }} " draggable="false" class="card-img-top img-art " alt="..." >
@@ -20,22 +21,46 @@
         </div>
 
         {#  connect form #} 
-        <form class=" border d-flex justify-content-evenly align-items-stretch bottom-margin-small flex-column bg-light" action="/send_email" method="POST">
+        <form class=" border d-flex justify-content-evenly align-items-stretch bottom-margin-small flex-column bg-light" action="/" method="POST">
+            
+            {# csrf protection  #}
+            {{ form.hidden_tag() }}
+
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="email" name="email" placeholder="email">
-                <label for="email">Email</label>
+
+                {{ form.email(class="form-control",
+                              id="email",
+                              placeholder="Email") }}
+
+                {{ form.email.label(for="email") }}
+
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="name" name="name" placeholder="fullname">
-                <label for="name">Name</label>
+
+                {{ form.name(class="form-control",
+                             id="name",
+                             placeholder="Fullname") }}
+
+                {{ form.name.label(for="name") }}
+
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
-                <label for="subject">Subject</label>
+
+                {{ form.subject(class="form-control",
+                                id="subject",
+                                placeholder="Subject") }}
+
+                {{ form.subject.label(for="subject") }}
+
             </div>
             <div class="form-floating mb-3">
-                <textarea class="form-control" id="message" name="message"  placeholder="Message"></textarea>
-                <label for="message">Message</label>
+
+                {{ form.message(class="form-control",
+                                id="message",
+                                placeholder="Message") }}
+
+                {{ form.message.label(for="message") }}
+
             </div>
                 <button type="submit" draggable="false" class="w-100 btn button button-black button-text-center" rows="4" column="50">Let's Connect</button>
         </form>
