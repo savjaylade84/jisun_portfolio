@@ -336,7 +336,7 @@ textarea {
 }
 .social-media-buttons .btn-dark, .social-media-buttons .btn:hover {
   background-color: #212529;
-  border: solid #1F1D24;
+  border: none;
 }
 
 /* intro */
