@@ -16,7 +16,7 @@
             <div class="container bottom-margin-xsmall">
                 <p class="fs-5 text-uppercase bottom-padding-none">Social Media</p>
                 {% for icon in information['social_media_icon'] %}
-                    <a href="{{ icon['Link'] | default('/error') }}" draggable="false" class=" align-items-center m-1 social-media-icon">
+                    <a href="{{ url_for('external_links', name=icon['Name'], target=icon['Link']) | default('/error') }}" target="_blank" draggable="false" class=" align-items-center m-1 social-media-icon">
                         <span>
                             <img src="{{ url_for('static',filename=icon['Icon']) | default(information['default-img']) }}"  draggable="false" class = "icon" width="16" height="16"/>
                         </span>

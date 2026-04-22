@@ -149,7 +149,6 @@ def set_email(form:FORM) -> EmailMessage:
     email_message.set_content(body)
     
     return email_message
-    
 
 @app.route('/external_links')
 def external_links():
