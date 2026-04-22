@@ -30,25 +30,29 @@ A personal portfolio website showcasing my projects, skills, and contact informa
 ## Getting Started
 
 1. **Clone the repository:**
+
     ```bash
     git clone https://github.com/savjaylade84/jisun_portfolio.git
     cd jisun_portfolio
     ```
 
 2. **Create a enviroment and activate it**
+
     ```bash
     python3 -m venv .venv
     source .venv/bin/activate
    ```
 
 3. **Install dependencies:**
+
     ```bash
     pip install -r requirements.txt
     ```
-    
+
 4. **Set up environment variables:**  
    Create a `.env` file in the project root with your email credentials:
-    ```
+
+    ```bash
     MAIL_SERVER=smtp.gmail.com
     MAIL_PORT=465
     MAIL_USERNAME=your_email@gmail.com
@@ -63,6 +67,7 @@ A personal portfolio website showcasing my projects, skills, and contact informa
     ```
 
 5. **Run the app locally:**
+
     ```bash
     flask run
     ```

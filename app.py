@@ -151,6 +151,15 @@ def set_email(form:FORM) -> EmailMessage:
     return email_message
     
 
+@app.route('/external_links')
+def external_links():
+    target = request.args.get("target")
+    name = request.args.get("name")
+    
+    app.logger.warning("user click => (%s):(%s)",name,target)
+    
+    return redirect(target)
+
 # main page route
 @app.route("/", methods = ['GET','POST'])
 def index():
