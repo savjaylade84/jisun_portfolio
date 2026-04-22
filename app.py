@@ -5,10 +5,32 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, EmailField, TextAreaField
 from wtforms.validators import DataRequired, Email
 from dotenv import load_dotenv
+import logging
+from logging.handlers import RotatingFileHandler
 import json
 import os
 import ssl
 import smtplib
+
+def set_logging() -> RotatingFileHandler:
+    
+    DIR:str = 'logs'
+    MAX_BYTES:int = 1024 * 1024
+    BACKUP_COUNT = 5
+    
+    if not os.path.exists(DIR):
+        os.makedirs(DIR)
+    
+    log_file_path = os.path.join(DIR, 'app.log')
+    
+    file_handler:RotatingFileHandler = RotatingFileHandler(log_file_path,MAX_BYTES,BACKUP_COUNT)
+    file_handler.setFormatter(logging.Formatter(
+                                        '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
+    
+    file_handler.setLevel(logging.INFO)
+    
+    return file_handler
+    
 
 app = Flask(__name__)       # create flask app
 
@@ -23,6 +45,9 @@ class FORM(FlaskForm):
     subject:StringField = StringField("Subject", validators=[DataRequired()])
     message:TextAreaField = TextAreaField("Message", validators=[DataRequired()])
 
+# set application logging config
+app.logger.addHandler(set_logging())
+app.logger.setLevel(logging.INFO)
 
 # configuration setting for sending email
 
@@ -85,11 +110,12 @@ def can_send_email(message:EmailMessage) -> bool:
         with smtplib.SMTP_SSL(current_app.config['MAIL_SERVER'], current_app.config['MAIL_PORT'], context=context) as server:
             server.login(current_app.config['MAIL_USERNAME'], current_app.config['MAIL_PASSWORD'])
             server.send_message(message)
-            
+        
+        app.logger.info("Success on sending Email")    
         return True
-    
+
     except Exception as e:
-        print(str(e))
+        app.logger.info(f"{ str(e) }")
     
     return False
     
@@ -134,7 +160,9 @@ def index():
     # and the form's field is not empty
     if form.validate_on_submit():
 
-        if can_send_email(message=set_email(form)):
+        message = set_email(form)
+        
+        if can_send_email(message):
             # redirect to home page when sending email is success
             return redirect(url_for('index')) 
         else:
