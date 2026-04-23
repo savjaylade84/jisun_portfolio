@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f9f9f9; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 20px auto; background: #ffffff; padding: 30px; border: 1px solid #e0e0e0; border-radius: 8px; }
+        .meta-section { border-bottom: 2px solid #f0f0f0; margin-bottom: 20px; padding-bottom: 15px; }
+        .meta-row { margin-bottom: 8px; font-size: 14px; color: #555555; }
+        .label { font-weight: bold; color: #333333; width: 70px; display: inline-block; }
+        .message-body { line-height: 1.8; color: #333333; font-size: 16px; padding: 10px 0; }
+        .footer { text-align: center; font-size: 12px; color: #999999; margin-top: 30px; border-top: 1px solid #eeeeee; padding-top: 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Information Header -->
+        <div class="meta-section">
+            <div class="meta-row"><span class="label">Date:</span> {{ date }}</div>
+            <div class="meta-row"><span class="label">From:</span> {{ sender }}</div>
+            <div class="meta-row"><span class="label">Subject:</span> {{ subject }}</div>
+        </div>
+
+        <!-- Main Message -->
+        <div class="message-body">
+            <div class="meta-row"><span class="label">Message:</span><br>{{ message | safe }}</div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>This is an automated notification from {{ sender }}.</p>
+        </div>
+    </div>
+</body>
+</html>

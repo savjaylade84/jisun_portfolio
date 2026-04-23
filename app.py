@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from flask import Flask,render_template,redirect,url_for,request,current_app
 #from flask_mail import Mail, Message
 from email.message import EmailMessage
@@ -14,13 +16,16 @@ import smtplib
 
 def set_logging(app):
     
-    DIR:str = 'logs'
-    MAX_BYTES:int = 1024 * 1024
-    BACKUP_COUNT = 5
+    DIR:str = 'logs'                        # directory path on log folder
+    MAX_BYTES:int = 1024 * 1024             # the limit of log file size
+    BACKUP_COUNT = 5                        # number of log should kept
     
+    # check if the log folder exist 
+    # if not then create
     if not os.path.exists(DIR):
         os.makedirs(DIR)
     
+    # precise folder path
     log_file_path = os.path.join(DIR, 'app.log')
     
     file_handler:RotatingFileHandler = RotatingFileHandler(
@@ -98,7 +103,7 @@ def error(message:str ="",description:str = ""):
     error = {"message":m,"description":d}               # create error dictionary
     information = load_information()                    # load information from json file
     
-    app.logger.warning(f"{ error }")
+    app.logger.warning(f"{ description }" or "Information Not Found")
     return render_template('404.html',
                            information = information, 
                            error=error)
@@ -123,7 +128,17 @@ def can_send_email(message:EmailMessage) -> bool:
         return False
     
     return True
-    
+
+
+# get a improvise email design 
+# usign html template
+def get_email_html(sender:str, subject:str, message:str):
+    return render_template('email.html',
+                           date=datetime.now().strftime("%B %d, %Y"),
+                           sender=sender,
+                           subject=subject,
+                           message=message)
+
 
 # set the email config that needed for sending
 # email thru gmail
@@ -138,18 +153,31 @@ def set_email(form:FORM) -> EmailMessage:
     name = form.name.data
     email = form.email.data
 
-    subject = f"New Message(Portfolio) from {email} | Subject: {form.subject.data}"
-    body = f'Email:{email} \r\n Name:{name} \r\n Message:{form.message.data}'
+    subject = f"New Message(Portfolio) : {form.subject.data}"
+    
     
     # create email message and set headers
     email_message = EmailMessage()
     email_message['Subject'] = subject
     email_message['From'] = sender
     email_message['To'] = receiver
+    
+    # fallback if the html for email failed
+    body = f'Email:{email} \r\n Name:{name} \r\n Message:{form.message.data}'
     email_message.set_content(body)
+    
+    # send email using html body
+    email_message.add_alternative(get_email_html(
+                                            sender=f"{form.name.data} | {form.email.data}",
+                                            subject=form.subject.data,
+                                            message=form.message.data
+                                ), subtype="html")
     
     return email_message
 
+# log every links in the portfolio
+# by routing in here before sending
+# them to their destination
 @app.route('/external_links')
 def external_links():
     target = request.args.get("target")
@@ -160,6 +188,7 @@ def external_links():
     return redirect(target)
 
 # main page route
+# also for sending email
 @app.route("/", methods = ['GET','POST'])
 def index():
 
