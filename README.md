@@ -64,6 +64,7 @@ A personal portfolio website showcasing my projects, skills, and contact informa
     MAIL_DEBUG=0
     TESTING=false
     MAIL_SUPPRESS_SEND=false
+    SECRET_KEY=your_own_secret_key
     ```
 
 5. **Run the app locally:**
