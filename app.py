@@ -134,7 +134,7 @@ def can_send_email(message:EmailMessage) -> bool:
 # usign html template
 def get_email_html(sender:str, subject:str, message:str):
     return render_template('email.html',
-                           date=datetime.now().strftime("%B %d, %Y"),
+                           date=datetime.now().strftime("%B %d, %Y %I:%M %p"),
                            sender=sender,
                            subject=subject,
                            message=message)
