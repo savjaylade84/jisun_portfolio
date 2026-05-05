@@ -33,11 +33,15 @@ textarea {
   width: 30rem;
 }
 .card-deck .card-title {
+  padding: 0.8em;
+  color: whitesmoke;
+  font-weight: 600;
+  background-color: #e21586;
   margin-bottom: 0;
 }
 .card-deck .card-body {
   color: #F5F5F5;
-  padding: 1.5em 2em;
+  padding: 1.5em 1.5em;
 }
 .card-deck .card-footer {
   background-color: #212529;
@@ -78,8 +82,8 @@ textarea {
 /* programming icon */
 .programming-icon {
   padding: 0.1em;
-  width: 36px;
-  height: 36px;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 .button-text-center {
@@ -219,6 +223,10 @@ textarea {
 
 .top-margin-none {
   margin-top: 0px;
+}
+
+.top-margin-xxxsmall {
+  margin-top: 0.45em;
 }
 
 .top-margin-xxsmall {

@@ -7,9 +7,14 @@
             {#  contact information #} 
             <div class="container bottom-margin-xsmall">
                 <p class="fs-5 text-uppercase bottom-padding-none">Contact Information</p>
-                <p class="fs-5 bottom-margin-none"> {{ information['primary-email'] }}</p>
-                <p class="fs-5 bottom-margin-none"> {{ information['secondary-email'] }}</p>
-                <p class="fs-5 bottom-margin-none"> {{ information['phone-number'] }}</p>
+
+                {# display the list of emails of the author #}
+                {% for email in information['emails']%}
+                    <p class="fs-5 bottom-margin-none"> {{ email }}</p>
+                {% endfor %}
+
+                {# display the phone number #}
+                <p class="fs-5 bottom-margin-none top-margin-xxxsmall"> {{ information['phone-number'] }}</p>
             </div>
 
             {#  social media icon #} 
@@ -22,8 +27,9 @@
                         </span>
                     </a>
                 {% endfor %}
+            
+                            <p class="fs-6 bottom-margin-none top-margin-xsmall">&copy; 2022&ndash;{{ current_year }} {{ information['Author'] }}. All Rights Reserved.</p>
             </div>
-
         </div>
             
     </footer>

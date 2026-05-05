@@ -215,7 +215,7 @@ def index():
                                     description="Email failed (Error 500). Please try again later or contact support."))
     
     return render_template('index.html',
-                           information = information,form=form)
+                           information = information,form=form,current_year=datetime.now().year)
 
 
 if __name__ == '__main__':

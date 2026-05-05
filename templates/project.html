@@ -5,22 +5,17 @@
                 {#  project item #} 
                 <div class="card m-2 purple-hue-bg">
 
-                    <picture>
-                        <source srcset=" {{ url_for('static',filename=information['Default-Picture']) | default(information['default-img']) }} " type="image/svg+xml">
-                        <img src=" {{ url_for('static',filename=information['Default-Picture']) | default(information['default-img']) }} " draggable="false" class="card-img-top" alt="...">
-                    </picture>
-
+                    <h4 class="card-title bottom-padding-xxsmall ">{{ project['Name'] }}</h4>
                     <div class="card-body">
 
-                        <h5 class="card-title bottom-padding-xxsmall ">{{ project['Name'] }}</h5>
 
                         <div class="d-flex flex-row flex-wrap bottom-padding-xxsmall">
                             {% for icon in project['img-icon'] %}
-                                <img src="{{ url_for('static',filename=icon) | default(information['default-img']) }}" alt="{{ project['img-alt'][loop.index0] }}" class = "programming-icon m-1" draggable="false" width="32" height="32"/>
+                                <img src="{{ url_for('static',filename=icon) | default(information['default-img']) }}" alt="{{ project['img-alt'][loop.index0] }}" class = "programming-icon m-1" draggable="false" width="64" height="64"/>
                             {% endfor %}
                         </div>
 
-                        <p class="card-text fs-6 text-justify text-wrap">{{ project['Description'] }}</p>
+                        <p class="card-text fs-6 text-justify">{{ project['Description'] }}</p>
 
                     </div>
 
