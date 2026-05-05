@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f9f9f9; margin: 0; padding: 0; }
         .container { max-width: 600px; margin: 20px auto; background: #ffffff; padding: 30px; border: 1px solid #e0e0e0; border-radius: 8px; }
@@ -14,23 +13,23 @@
     </style>
 </head>
 <body>
-    <main class="container">
+    <div class="container">
         <!-- Information Header -->
-        <section class="meta-section">
+        <div class="meta-section">
             <div class="meta-row"><span class="label">Date:</span> {{ date }}</div>
             <div class="meta-row"><span class="label">From:</span> {{ sender }}</div>
             <div class="meta-row"><span class="label">Subject:</span> {{ subject }}</div>
-        </section>
+        </div>
 
         <!-- Main Message -->
-        <section class="message-body">
+        <div class="message-body">
             <div class="meta-row"><span class="label">Message:</span><br>{{ message | safe }}</div>
-        </section>
+        </div>
 
         <!-- Footer -->
-        <footer class="footer">
+        <div class="footer">
             <p>This is an automated notification from {{ sender }}.</p>
-        </footer>
-    </main>
+        </div>
+    </div>
 </body>
 </html>
