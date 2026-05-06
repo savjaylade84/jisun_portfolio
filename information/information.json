@@ -16,6 +16,7 @@
     "error-img":"/img/error_person-removebg.png",
     "Let-Connect-Image":"/img/Business_merger-rafiki.png",
     "Website":"https://savjalade84.pythonanywhere.com/",
+    "world-icon":"static/img/global_purple.png",
     "social_media_icon": [
         {
             "Name": "Github",

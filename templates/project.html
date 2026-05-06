@@ -20,7 +20,11 @@
                     </div>
 
                     <div class="card-footer">
-                        <a href=" {{ url_for('external_links',name=project['Name'],target=project['Link']) | default('/error') }} " target="_blank" draggable="false" class="btn button button-white right-margin-xsmall">🌐 Repository</a>
+                        <a href=" {{ url_for('external_links',name=project['Name'],target=project['Link']) | default('/error') }} " target="_blank" draggable="false" class="btn button button-white right-margin-xsmall">
+                            <img src="{{ information['world-icon'] }}" alt="purple global icon" width="16" height="16">    
+                            &nbsp;
+                            Repository
+                        </a>
                             
                         {# 
                              this validate if there's any website link on the repository
@@ -28,7 +32,11 @@
                              visit that website
                         #} 
                         {% if project['website-link'] %}
-                            <a href=" {{ url_for('external_links',name=project['Name'],target=project['website-link']) | default('/error') }} " target="_blank" draggable="false" class="btn button button-white">🌐 Website</a>
+                            <a href=" {{ url_for('external_links',name=project['Name'],target=project['website-link']) | default('/error') }} " target="_blank" draggable="false" class="btn button button-white">
+                                <img src="{{ information['world-icon'] }}" alt="purple global icon" width="16" height="16">
+                                &nbsp;
+                                Website
+                            </a>
                         {% endif%}
 
                     </div>
