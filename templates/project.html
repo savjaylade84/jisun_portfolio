@@ -5,7 +5,7 @@
                 {#  project item #} 
                 <div class="card m-2 purple-hue-bg">
 
-                    <h4 class="card-title bottom-padding-xxsmall ">{{ project['Name'] }}</h4>
+                    <h5 class="card-title bottom-padding-xxsmall ">{{ project['Name'] }}</h5>
                     <div class="card-body">
 
 
@@ -20,7 +20,7 @@
                     </div>
 
                     <div class="card-footer">
-                        <a href=" {{ url_for('external_links',name=project['Name'],target=project['Link']) | default('/error') }} " target="_blank" draggable="false" class="btn button button-white right-margin-xsmall">Visit Repository</a>
+                        <a href=" {{ url_for('external_links',name=project['Name'],target=project['Link']) | default('/error') }} " target="_blank" draggable="false" class="btn button button-white right-margin-xsmall">🌐 Repository</a>
                             
                         {# 
                              this validate if there's any website link on the repository
@@ -28,7 +28,7 @@
                              visit that website
                         #} 
                         {% if project['website-link'] %}
-                            <a href=" {{ url_for('external_links',name=project['Name'],target=project['website-link']) | default('/error') }} " target="_blank" draggable="false" class="btn button button-white">Visit Website</a>
+                            <a href=" {{ url_for('external_links',name=project['Name'],target=project['website-link']) | default('/error') }} " target="_blank" draggable="false" class="btn button button-white">🌐 Website</a>
                         {% endif%}
 
                     </div>

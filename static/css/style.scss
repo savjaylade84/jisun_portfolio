@@ -39,7 +39,7 @@ textarea{
         width: 30rem;
     }
     .card-title{
-        padding: 0.8em;
+        padding: 0.8em 1.2em;
         color:whitesmoke;
         font-weight: 600;
         background-color:#e21586;
@@ -47,11 +47,11 @@ textarea{
     }
     .card-body{
         color: #F5F5F5;
-        padding: 1.5em 1.5em;
+        padding: 1.5em 1.2em;
     }
     .card-footer{
         background-color: $primary-color-blackish;
-        padding: 1.5em 2em;
+        padding: 0.8em 1.2em;
         border: 0px solid transparent;
     }
 }
