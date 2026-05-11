@@ -1,26 +1,26 @@
 {% block content %}
-    <div class=" stats d-flex blackish-bg top-padding-small bottom-padding-small flex-column flex-lg-row text-center align-items-start justify-content-evenly bd-highlight mb-3" id="statistic">
-        
-        <div class="stats-section d-flex flex-column align-items-center mb-3 mb-lg-0">
-            <h4>Github's Trophies</h4>
-            <img src="{{ information['github-readme-trophy'] }}" id="trophy" class="img-fluid" width="500" alt="">
-            <div class="stats-section d-flex flex-column align-items-center mb-3 mb-lg-0">
-                <h4>Github's Contribution Graph</h4>
-                <img src="{{ information['github-contribution-graph'] }}" width="800" height="600" class="img-fluid" alt="">
-            </div>
+    <div class="stats d-flex blackish-bg top-padding-small bottom-padding-small flex-column flex-lg-row align-items-lg-start align-items-md-center justify-content-evenly mb-3" id="statistic">
+
+        <div class="stats-section d-flex flex-column align-items-center mb-4 mb-lg-0">
+            <h4 class="text-center">Github's Trophies</h4>
+            <img src="{{ information['github-readme-trophy'] }}" id="trophy" class="img-fluid mb-4" width="500" alt="">
+
+            <h4 class="text-center">Github's Contribution Graph</h4>
+            <img src="{{ information['github-contribution-graph'] }}" class="img-fluid" height="300" width="800" alt="">
         </div>
 
-        <div class="stats-section d-flex flex-column align-items-center mb-3 mb-lg-0">
-            <h4>Github's Profile Stats</h4>
+        <div class="stats-section d-flex flex-column align-items-center mb-4 mb-lg-0">
+            <h4 class="text-center">Github's Profile Stats</h4>
             <img src="{{ information['github-readme-profile-stats'] }}" class="img-fluid mb-2" width="500" alt="">
-            <img src="{{ information['github-readme-streak-stats'] }}" class="img-fluid" width="500" alt="">
-                <div class="stats-section d-flex flex-column align-items-center mb-3 mb-lg-0">
-                    <h4>Github's Language Stats</h4>
-                    <img src="{{ information['github-readme-lang-stats'] }}" class="img-fluid" width="500" alt="">
-                    <a href=" {{ information['github-profile'] }} " target="_blank" draggable="false" style="width: 95%;" class="btn button top-margin-xsmall button-white">View Github Profile </a>
-                </div>
-        </div>
+            <img src="{{ information['github-readme-streak-stats'] }}" class="img-fluid mb-4" width="500" alt="">
 
+            <h4 class="text-center">Github's Language Stats</h4>
+            <img src="{{ information['github-readme-lang-stats'] }}" class="img-fluid mb-3" width="500" alt="">
+
+            <a href="{{ information['github-profile'] }}" target="_blank" draggable="false" class="btn button top-margin-xsmall button-white w-100">
+                Visit Github Profile
+            </a>
+        </div>
 
     </div>
 {% endblock %}
