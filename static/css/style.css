@@ -24,6 +24,18 @@ textarea {
   resize: none;
 }
 
+.stats {
+  color: whitesmoke;
+}
+
+.stats-section img {
+  padding: 0.5em 0.5em;
+}
+.stats-section h4 {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+}
+
 /*projects*/
 .card-deck {
   display: flex;
@@ -44,7 +56,7 @@ textarea {
   padding: 1.5em 1.2em;
 }
 .card-deck .card-footer {
-  background-color: #212529;
+  background-color: #282a2c;
   padding: 0.8em 1.2em;
   border: 0px solid transparent;
 }
@@ -66,6 +78,7 @@ textarea {
 .button {
   cursor: pointer;
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   isolation: isolate;
   position: relative;
@@ -74,6 +87,7 @@ textarea {
   position: relative;
   transition: color 400ms linear;
   padding: 0.7rem 0.7rem;
+  text-align: center;
 }
 .button span {
   margin-right: 0.4em;
@@ -459,6 +473,11 @@ footer .card-group .card {
 .purple-hue-bg {
   background: #ae22c3;
   background: linear-gradient(0deg, rgb(174, 34, 195) 0%, rgb(237, 57, 138) 100%);
+}
+
+.blackish-bg {
+  background-color: #282a2c;
+  color: whitesmoke;
 }
 
 .black-bg {

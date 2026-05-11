@@ -4,6 +4,7 @@ $accent-color-gold:rgba(202, 158, 12, 0.9);
     $primary-color-white:whitesmoke;
     $primary-color-black: rgba(20, 20, 22,0.8);
     $primary-color-blackish:#212529;
+    $primary-color-blackishy: #282a2c;
 
 *{
     font-family: 'Lato', sans-serif;    
@@ -30,6 +31,22 @@ textarea{
     resize: none;
 }
 
+.stats{
+    color:$primary-color-white;
+
+}
+
+.stats-section{
+    img{
+            padding:0.5em 0.5em;
+    }
+
+    h4{
+        padding-top: 1em;
+        padding-bottom: 0.5em;
+    }
+}
+
 /*projects*/
 .card-deck{
     display: flex;
@@ -50,7 +67,7 @@ textarea{
         padding: 1.5em 1.2em;
     }
     .card-footer{
-        background-color: $primary-color-blackish;
+        background-color: $primary-color-blackishy;
         padding: 0.8em 1.2em;
         border: 0px solid transparent;
     }
@@ -73,6 +90,7 @@ textarea{
 .button{
     cursor: pointer;
     display: inline-flex;
+    justify-content: center;
     align-items: center; 
     isolation: isolate;
     position: relative;
@@ -81,6 +99,7 @@ textarea{
     position: relative;
     transition: color 400ms linear;
     padding: 0.7rem 0.7rem;
+    text-align: center;
 
     span{
         margin-right:0.4em;
@@ -484,6 +503,11 @@ footer{
 .purple-hue-bg{
     background: #ae22c3;
     background: linear-gradient(0deg,rgba(174, 34, 195, 1) 0%, rgba(237, 57, 138, 1) 100%);
+}
+
+.blackish-bg{
+    background-color: $primary-color-blackishy;
+    color: $primary-color-white;
 }
 .black-bg{
     background-color: $primary-color-blackish;
