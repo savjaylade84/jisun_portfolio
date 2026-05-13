@@ -10,7 +10,7 @@
         <div class="text-light top-margin-none bottom-margin-xsmall top-padding-none bottom-padding-none d-flex flex-column flex-lg-row gap-5">
             {% for desc in information['About']['Description'] %}
 
-                <div class=" about-section about-list bottom-margin-xxsmall d-flex flex-column align-items-center text-center flex-grow-1">
+                <div class=" col-12 col-md-6 about-section about-list bottom-margin-xxsmall d-flex flex-column align-items-center text-center flex-grow-1">
 
                     <picture class="d-flex align-items-center justify-content-center">
                         <source srcset="{{ url_for('static',filename=desc['img']) | default(information['default-img']) }}" type="image/svg+xml">
@@ -27,6 +27,20 @@
 
             {% endfor %}
         </div>
+
+    <div class="about-section about-text col-12 col-md-6 d-flex align-items-center align-self-center flex-column mx-auto">
+        <img class="img-fluid img-art" src="{{ url_for('static',filename=information['resume']['img']) | default(information['default-img']) }}" alt="...">
+        <div class="about-text bottom-margin-none">
+                <p class="fs-4 text-capitalize text-center">{{ information['resume']['title'] }}</p>
+                <p class="fs-5 lh-sm text-justify">{{ information['resume']['desc'] }}</p>
+        </div>
+        <a class="w-100 btn button button-white button-text-center d-flex align-items-center justify-content-center gap-2" target="_blank" href="{{ information['resume']['link'] }}">
+            <img src="{{ url_for('static',filename=information['resume']['icon']) | default(information['default-img']) }}" 
+                style="background-color: black; border-radius: 100%; padding: 0.2em; object-fit: cover; vertical-align: middle;" 
+                alt="" width="28" height="28">
+            Resume/CV
+        </a>
+    </div>
 
     </div>
 </div>

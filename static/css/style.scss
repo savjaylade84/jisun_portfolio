@@ -66,6 +66,8 @@ textarea{
   transform: translateY(-4px);
 }
 
+
+
 .stats-section{
     img{
             padding:0.5em 0.5em;
@@ -153,6 +155,7 @@ textarea{
     justify-content: center;
     align-items: center;
     text-align: center;
+    justify-self: center;
 }
 
 .button-white::after{
@@ -174,7 +177,7 @@ textarea{
     transform-origin: left;
 }
 
-.button:hover::after,.button:focus::after,.button:active::after{
+.button:hover::after,.button:focus::after,.button:active::after,.button:link{
     transform: scale(1,1);
 }
 

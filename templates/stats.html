@@ -17,8 +17,11 @@
             <h4 class="text-center">Github's Language Stats</h4>
             <img src="{{ information['github-readme-lang-stats'] }}" class="img-fluid mb-3" width="500" alt="">
 
-            <a href="{{ information['github-profile'] }}" target="_blank" draggable="false" class="btn button top-margin-xsmall button-white w-100">
-                Visit Github Profile
+            <a href="{{ information['github-profile'] }}" target="_blank" draggable="false" class="btn button top-margin-xsmall button-white w-100 d-flex align-items-center justify-content-center gap-2">
+                <img src="{{ url_for('static',filename=information['github-icon']) | default(information['default-img']) }}" 
+                    style="background-color: black; border-radius: 100%; padding: 0.2em; object-fit: cover; vertical-align: middle;" 
+                    alt="" width="28" height="28">
+                Github Profile
             </a>
         </div>
 
