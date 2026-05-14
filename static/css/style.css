@@ -45,6 +45,10 @@ textarea {
   padding: 0.5em 1em;
   color: rgba(255, 255, 255, 0.7);
 }
+.about-text p.w-90 {
+  width: 90%;
+  justify-self: center;
+}
 
 .about-section {
   padding: 1rem;

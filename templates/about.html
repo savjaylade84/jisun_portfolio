@@ -1,13 +1,13 @@
 {% block content %}
 
-<div class="about-main purple-hue-bg top-padding-medium bottom-padding-medium top-shadow" id="about">
+<div class="padding-vertical-xsmall about-main purple-hue-bg top-padding-medium bottom-padding-medium top-shadow" id="about">
     <div class="container top-margin-none top-padding-none">
 
         <div class="about-label text-center bottom-margin-xsmall">
             <p class="fs-3">The Person Behind the Code</p>
         </div>
 
-        <div class="text-light top-margin-none bottom-margin-xsmall top-padding-none bottom-padding-none d-flex flex-column flex-lg-row gap-5">
+        <div class=" text-light align-items-center top-margin-none bottom-margin-xsmall top-padding-none bottom-padding-none d-flex flex-column flex-lg-row gap-5">
             {% for desc in information['About']['Description'] %}
 
                 <div class=" col-12 col-md-6 about-section about-list bottom-margin-xxsmall d-flex flex-column align-items-center text-center flex-grow-1">
@@ -20,7 +20,7 @@
 
                     <div class="about-text bottom-margin-none">
                         <p class="fs-4 text-capitalize text-center">{{ desc['title'] }}</p>
-                        <p class="fs-5 lh-sm text-justify">{{ desc['desc'] }}</p>
+                        <p class="fs-5 w-90 lh-sm text-center">{{ desc['desc'] }}</p>
                     </div>
 
                 </div>
@@ -32,9 +32,9 @@
         <img class="img-fluid img-art" src="{{ url_for('static',filename=information['resume']['img']) | default(information['default-img']) }}" alt="...">
         <div class="about-text bottom-margin-none">
                 <p class="fs-4 text-capitalize text-center">{{ information['resume']['title'] }}</p>
-                <p class="fs-5 lh-sm text-justify">{{ information['resume']['desc'] }}</p>
+                <p class="fs-5 lh-sm text-center">{{ information['resume']['desc'] }}</p>
         </div>
-        <a class="w-100 btn button button-white button-text-center d-flex align-items-center justify-content-center gap-2" target="_blank" href="{{ information['resume']['link'] }}">
+        <a class=" padding-vertical-xxsmall w-75 btn button button-white bottom-margin-xxsmall button-text-center d-flex align-items-center justify-content-center gap-2" target="_blank" role="button" href="{{ information['resume']['link'] }}">
             <img src="{{ url_for('static',filename=information['resume']['icon']) | default(information['default-img']) }}" 
                 style="background-color: black; border-radius: 100%; padding: 0.2em; object-fit: cover; vertical-align: middle;" 
                 alt="" width="28" height="28">
