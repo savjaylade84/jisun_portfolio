@@ -53,15 +53,13 @@
                 {{ form.subject.label(for="subject") }}
 
             </div>
-            <div class="form-floating mb-3">
-
+           <div class="form-floating mb-3">
                 {{ form.message(class="form-control",
                                 id="message",
                                 placeholder="Message",
-                                spellcheck="false") }}
-
+                                spellcheck="false",
+                                style="height: 150px;") }}
                 {{ form.message.label(for="message") }}
-
             </div>
                 <button type="submit" draggable="false" class="w-100 btn button button-black button-text-center" rows="4" column="50">Let's Connect</button>
         </form>

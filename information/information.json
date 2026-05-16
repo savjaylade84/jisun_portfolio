@@ -76,7 +76,7 @@
             "Sass Logo",
             "JavaScript Logo"
         ],
-        "Description": "My first Website created is a static fan-page website built with HTML, CSS and a touch of JavaScript. Created as a tribute to Green Day, it showcases their albums, discography and fan-content in a clean, responsive layout. This project highlights my ability to build from-scratch static websites, organize content, and apply core web fundamentals (semantic HTML, custom styling, basic JS) for a polished, fan-centric web experience.",
+        "Description": "A responsive, static tribute site built from scratch using HTML, CSS, and basic JavaScript. Demonstrates core web fundamentals, clean content organization, and semantic UI design.",
         "Link": "https://github.com/savjaylade84/GreenDayFan.github.io",
         "website-link": "https://savjaylade84.github.io/GreenDayFan.github.io/greendayFan.html"
         },
@@ -96,7 +96,7 @@
             "Bootstrap CSS Logo",
             "JSON Data Format Logo"
         ],
-        "Description": "Flask Weather App is a Python web application built with Flask that uses the OpenWeatherMap API to display current weather information for cities around the world. It supports typical Flask setup and routing, makes HTTP requests to fetch weather data, and renders results in front-end templates.",
+        "Description": "A Python web app built with Flask that integrates the OpenWeatherMap API to fetch and render real-time global weather data in front-end templates.",
         "Link": "https://github.com/savjaylade84/flask_weather_app",
         "website-link": "https://weatherflaskapp.onrender.com/"
         },
@@ -116,7 +116,7 @@
             "Bootstrap CSS Logo",
             "Facebook API Logo"
         ],
-        "Description": "Flask-based Python application that integrates with the Facebook Graph API to allow posting directly to a Facebook Page. It handles user authentication, permissions, and posting workflows, letting you manage page content programmatically via a web interface.",
+        "Description": "A Flask-based application utilizing the Facebook Graph API to handle user authentication and programmatically publish posts directly to a Facebook Page.",
         "Link": "https://github.com/savjaylade84/My_Facebook_Page_Post",
         "website-link": "https://my-facebook-page-post.onrender.com/"
         },
@@ -132,7 +132,7 @@
             "Bash Scripting Logo",
             "JSON Storage Logo"
         ],
-        "Description": "terminal-based banking app built with Python. It lets users create accounts, deposit or withdraw money, check balances, and view transaction history, while admins can manage accounts and logs. Data is stored in JSON files with hashed and salted encryption for security. It also has ai for financial analysis of each account.",
+        "Description": "A Python CLI banking application featuring secure JSON storage with salted hashing, user/admin roles, transaction history, and AI-powered financial analysis.",
         "Link": "https://github.com/savjaylade84/python-bank-system",
         "website-link": ""
         },
@@ -148,7 +148,7 @@
             "Bash Scripting Logo",
             "JSON Data Logo"
         ],
-        "Description": "terminal-based Python app that interfaces with a Pokémon API to let users look up Pokémon data. It provides a command-line Pokédex experience, fetching and displaying information like stats, types, and descriptions for queried Pokémon.",
+        "Description": "A command-line Pokédex built with Python that queries a REST API to instantly fetch and display specific Pokémon stats, types, and descriptions.",
         "Link": "https://github.com/savjaylade84/python_pokedex_terminal",
         "website-link": ""
         },
@@ -166,7 +166,7 @@
             "JSON Data Logo",
             "Matplotlib Visualization Logo"
         ],
-        "Description": "terminal-based Python application that helps you log and analyze your daily calorie intake. It records meals, tracks nutritional stats over time, and uses AI-driven analytics to provide insights into eating habits. The app also presents data visually through simple statistical charts, making it easier to understand and improve diet patterns.",
+        "Description": "A Python CLI tool for logging meals and tracking nutrition. Features visual statistical charts and AI-driven analytics to provide insights into daily eating habits.",
         "Link": "https://github.com/savjaylade84/calorie_tracker",
         "website-link": ""
         }
